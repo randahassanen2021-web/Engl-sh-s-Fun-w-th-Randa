@@ -1,0 +1,1145 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Let Kids Have Fun with Randa</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@500;700;800&family=Cairo:wght@600;700&display=swap">
+<style>
+/* Layout: a sunny playground — sticky header, hero with Ollie the owl, then three play zones (cartoons, tense stories, flashcards) on a sky ground. One bright look by design. */
+:root{
+  --sky:#E4F4FF; --sky-2:#C4E6FF; --paper:#FFFFFF;
+  --sun:#FFC83D; --sun-soft:#FFF0C2; --coral:#FF6B5B; --coral-soft:#FFE1DD;
+  --grass:#26A866; --grass-soft:#D8F5E5; --grape:#7454F5; --grape-soft:#E8E2FF;
+  --ink:#22305B; --ink-2:#55618A; --line:#D3E3F2;
+  --display:"Baloo 2","Comic Sans MS","Trebuchet MS",system-ui,sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+  --ar:"Cairo","Segoe UI","Tahoma",sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--sky);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;
+  background-image:radial-gradient(var(--sky-2) 1.6px,transparent 1.6px);background-size:26px 26px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--paper)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:4px solid var(--grape);outline-offset:3px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* Header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--paper);box-shadow:0 3px 0 var(--line)}
+.top .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--ink);font-family:var(--display);font-weight:800;font-size:1.25rem;margin-right:auto}
+.brand svg{width:40px;height:46px}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav a{text-decoration:none;color:var(--ink);font-weight:800;padding:6px 12px;border-radius:999px;font-size:.95rem}
+.nav a:hover{background:var(--sun-soft)}
+.stars{display:flex;align-items:center;gap:6px;background:var(--sun);border-radius:999px;padding:5px 14px;font-weight:800;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.nav{order:3;width:100%;justify-content:space-between}.nav a{padding:6px 8px;font-size:.9rem}}
+
+/* Hero */
+.hero{background:var(--sun);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:44px;background:var(--sky);
+  -webkit-mask:radial-gradient(28px 24px at 50% 0,transparent 98%,#000) 0 0/56px 44px repeat-x;mask:radial-gradient(28px 24px at 50% 0,transparent 98%,#000) 0 0/56px 44px repeat-x}
+.hero .wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:24px;align-items:center;padding-block:40px 80px}
+.hero h1{font-size:clamp(2.6rem,7.4vw,5.4rem);font-weight:800;letter-spacing:-.5px}
+.hero h1 .fun{display:inline-block}
+.hero h1 .fun span{display:inline-block;animation:hop 2.8s ease-in-out infinite;-webkit-text-stroke:2px var(--ink);paint-order:stroke fill}
+.hero h1 .randa{position:relative;white-space:nowrap}
+.hero h1 .randa::after{content:"";position:absolute;left:0;right:0;bottom:.02em;height:.16em;background:var(--coral);border-radius:99px;z-index:-1}
+@keyframes hop{0%,70%,100%{transform:translateY(0) rotate(0)}80%{transform:translateY(-10px) rotate(-6deg)}90%{transform:translateY(0) rotate(4deg)}}
+.hero p.lead{font-size:1.2rem;max-width:34em;margin:18px 0 24px;font-weight:700}
+.big-btns{display:flex;flex-wrap:wrap;gap:12px}
+.bigbtn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:1.2rem;padding:12px 22px;border-radius:20px;color:#fff;border:3px solid var(--ink);box-shadow:0 5px 0 var(--ink);transition:transform .12s, box-shadow .12s}
+.bigbtn:hover{transform:translateY(-2px);box-shadow:0 7px 0 var(--ink)}
+.bigbtn:active{transform:translateY(4px);box-shadow:0 1px 0 var(--ink)}
+.b-coral{background:var(--coral)}.b-grass{background:var(--grass)}.b-grape{background:var(--grape)}
+.hero-owl{position:relative;justify-self:center;width:min(320px,80%)}
+.hero-owl svg{width:100%;height:auto;animation:float 4s ease-in-out infinite}
+.hero-owl .say{position:absolute;top:-6px;right:-14px;background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:8px 14px;font-family:var(--display);font-weight:800;font-size:1.05rem;transform:rotate(4deg)}
+@keyframes float{50%{transform:translateY(-12px)}}
+@media (max-width:760px){.hero .wrap{grid-template-columns:1fr;padding-block:28px 72px}.hero-owl{width:200px;order:-1}.hero-owl .say{right:-40px}}
+
+/* Age chooser */
+.ages{padding-block:12px 8px}
+.ages-box{background:var(--paper);border:3px solid var(--ink);border-radius:26px;padding:16px 18px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.ages-box h2{font-size:1.5rem;margin-right:6px}
+.chip{border:3px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 14px;font-weight:800;display:flex;flex-direction:column;align-items:flex-start;line-height:1.15;text-align:left}
+.chip small{font-weight:700;color:var(--ink-2);font-size:.75rem}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff}
+.chip[aria-pressed="true"] small{color:var(--sun-soft)}
+
+/* Sections */
+section.zone{padding-block:44px 20px}
+.zone-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 20px;margin-bottom:22px}
+.zone-head h2{font-size:clamp(2rem,4.6vw,3rem);font-weight:800;position:relative;padding-left:58px}
+.zone-head h2 .blob{position:absolute;left:0;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:40% 60% 55% 45%/55% 45% 55% 45%;border:3px solid var(--ink);display:grid;place-items:center;font-size:1.4rem}
+.zone-head p{margin:0;max-width:36em;color:var(--ink-2);font-weight:700}
+.empty{background:var(--paper);border:3px dashed var(--line);border-radius:22px;padding:24px;text-align:center;font-weight:800;color:var(--ink-2)}
+
+/* Video cards */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.vcard{position:relative;text-align:left;background:var(--paper);border:3px solid var(--ink);border-radius:24px;padding:0;overflow:hidden;box-shadow:0 6px 0 var(--ink);transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column}
+.vcard:hover{transform:translateY(-4px) rotate(-.6deg);box-shadow:0 10px 0 var(--ink)}
+.vthumb{height:120px;display:grid;place-items:center;font-size:58px;position:relative;border-bottom:3px solid var(--ink)}
+.vthumb .play{position:absolute;right:12px;bottom:-22px;width:44px;height:44px;border-radius:50%;background:var(--paper);border:3px solid var(--ink);display:grid;place-items:center}
+.vthumb .play::before{content:"";border-left:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.vbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.vbody h3{font-size:1.3rem;padding-right:40px}
+.vbody .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;font-size:.82rem;font-weight:800}
+.pill{border-radius:999px;padding:2px 10px;background:var(--sky);color:var(--ink)}
+.done-star{position:absolute;top:10px;left:10px;background:var(--paper);border:2px solid var(--ink);border-radius:999px;padding:0 8px;font-size:.85rem;font-weight:800}
+
+/* Tense board */
+.board{display:grid;grid-template-columns:130px repeat(4,minmax(0,1fr));gap:12px}
+.rowhead{border:3px solid var(--ink);border-radius:20px;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.5rem;color:#fff;text-align:center;padding:10px}
+.colhead{font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-2);text-align:center;align-self:end}
+.tcard{background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:4px;box-shadow:0 5px 0 var(--ink);transition:transform .15s;min-width:0;position:relative}
+.tcard:hover{transform:translateY(-3px)}
+.tcard .tem{font-size:30px;line-height:1}
+.tcard b{font-family:var(--display);font-size:1.12rem;line-height:1.1}
+.tcard .ex{font-size:.9rem;color:var(--ink-2);font-weight:700}
+.tcard .ex em{font-style:normal;color:var(--ink);background:var(--sun-soft);border-radius:6px;padding:0 4px}
+.tcard.dim{opacity:.42}
+.tcard .agepill{font-size:.72rem;font-weight:800;color:var(--ink-2)}
+.g-present{background:var(--grass)}.g-past{background:var(--coral)}.g-future{background:var(--grape)}
+@media (max-width:820px){
+  .board{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .colhead{display:none}
+  .rowhead{grid-column:1/-1;font-size:1.3rem;padding:6px}
+}
+
+/* Flashcards */
+.fc-wrap{display:grid;grid-template-columns:260px 1fr;gap:22px;align-items:start}
+.decks{display:flex;flex-direction:column;gap:10px}
+.deck{display:flex;align-items:center;gap:10px;background:var(--paper);border:3px solid var(--ink);border-radius:18px;padding:8px 12px;text-align:left;font-weight:800}
+.deck .dic{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-size:24px;flex:none;border:2px solid var(--ink)}
+.deck small{display:block;color:var(--ink-2);font-weight:700;font-size:.78rem}
+.deck[aria-pressed="true"]{background:var(--ink);color:#fff}
+.deck[aria-pressed="true"] small{color:var(--sun-soft)}
+.fc-stage{display:flex;flex-direction:column;align-items:center;gap:16px;background:var(--paper);border:3px solid var(--ink);border-radius:28px;padding:24px 16px}
+.fc-title{font-family:var(--display);font-weight:800;font-size:1.5rem;text-align:center}
+.card3d{perspective:1200px;width:min(340px,100%);aspect-ratio:4/5;max-width:100%;border:0;background:none;padding:0}
+.card-in{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.3,1.4,.5,1);transform-style:preserve-3d}
+.card3d.flipped .card-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border:4px solid var(--ink);border-radius:26px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px;box-shadow:0 8px 0 var(--ink)}
+.face.back{transform:rotateY(180deg);background:var(--paper)}
+.face .pic{font-size:clamp(84px,24vw,128px);line-height:1}
+.face .swatch{width:62%;aspect-ratio:1;border-radius:50%;border:4px solid var(--ink)}
+.face .num{font-family:var(--display);font-weight:800;font-size:120px;line-height:.9}
+.face .dots{font-size:22px;letter-spacing:2px;max-width:220px;text-align:center}
+.face .word{font-family:var(--display);font-weight:800;font-size:2.6rem;line-height:1}
+.face .arabic{font-family:var(--ar);font-size:2rem;font-weight:700;direction:rtl}
+.face .extra{font-weight:800;color:var(--ink-2);text-align:center;font-size:1.05rem}
+.face .hint{position:absolute;bottom:12px;font-size:.78rem;font-weight:800;color:var(--ink-2)}
+.fc-ctrl{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+.rbtn{border:3px solid var(--ink);background:var(--paper);border-radius:16px;padding:8px 14px;font-weight:800;box-shadow:0 4px 0 var(--ink);display:inline-flex;align-items:center;gap:6px}
+.rbtn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink)}
+.rbtn.solid{background:var(--grass);color:#fff}
+.count{font-weight:800;font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
+.known{display:flex;gap:4px;flex-wrap:wrap;justify-content:center;max-width:340px}
+.known i{width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:var(--paper)}
+.known i.on{background:var(--sun)}
+.known i.cur{outline:3px solid var(--grape);outline-offset:1px}
+@media (max-width:760px){.fc-wrap{grid-template-columns:1fr}.decks{flex-direction:row;overflow-x:auto;padding-bottom:6px}.deck{flex:none}}
+
+/* Parents */
+.parents{margin-block:40px 0;background:var(--ink);color:#fff;border-radius:32px 32px 0 0}
+.parents .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;padding-block:40px}
+.parents h2{font-size:2.2rem;color:var(--sun)}
+.parents p{max-width:36em}
+.contact{display:flex;flex-direction:column;gap:12px}
+.crow{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.08);border-radius:16px;padding:10px 14px;flex-wrap:wrap}
+.crow span.l{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--sun-soft);width:100%}
+.crow code{font-family:var(--body);font-weight:800;font-size:1.1rem;user-select:all;word-break:break-all;flex:1;min-width:0}
+.crow button{background:var(--sun);color:var(--ink);border:0;border-radius:10px;padding:6px 12px;font-weight:800}
+.foot{font-size:.85rem;color:#B9C3E6;padding-bottom:24px}
+@media (max-width:760px){.parents .wrap{grid-template-columns:1fr}}
+
+/* Modals */
+.modal{position:fixed;inset:0;z-index:100;background:rgba(34,48,91,.55);display:flex;align-items:center;justify-content:center;
+  padding:calc(12px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+.modal#playerModal{z-index:110}
+.sheet{background:var(--paper);border:4px solid var(--ink);border-radius:28px;width:min(860px,100%);max-height:100%;overflow:auto;box-shadow:0 10px 0 var(--ink)}
+.sheet-head{display:flex;align-items:center;gap:12px;padding:12px 16px;border-bottom:3px solid var(--ink)}
+.sheet-head h3{font-size:1.5rem;flex:1;min-width:0}
+.xbtn{width:44px;height:44px;border-radius:50%;border:3px solid var(--ink);background:var(--paper);font-weight:800;font-size:1.3rem;flex:none}
+
+/* Player stage */
+.stage{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(#9FD8FF,#DDF2FF 70%);border-bottom:3px solid var(--ink)}
+.ground{position:absolute;left:-5%;right:-5%;bottom:-18%;height:38%;background:#7ED957;border-radius:50% 50% 0 0;border-top:4px solid #4DB33A}
+.sunball{position:absolute;top:6%;right:6%;width:13%;aspect-ratio:1;border-radius:50%;background:var(--sun);box-shadow:0 0 0 10px rgba(255,200,61,.35);animation:spin 18s linear infinite}
+.cloud{position:absolute;background:#fff;border-radius:99px;height:9%;width:18%;opacity:.95;animation:drift 26s linear infinite}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud::before{width:50%;height:160%;left:15%;top:-70%}.cloud::after{width:36%;height:120%;left:50%;top:-45%}
+.c1{top:12%;left:-20%}.c2{top:26%;left:-20%;animation-delay:-13s;transform:scale(.7)}
+@keyframes drift{to{left:110%}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stage-owl{position:absolute;left:3%;bottom:6%;width:20%;z-index:3}
+.stage-owl svg{width:100%;height:auto}
+.art{position:absolute;left:24%;right:3%;top:8%;bottom:30%;display:flex;align-items:center;justify-content:center;gap:2%;flex-wrap:wrap;z-index:2}
+.art .it{font-size:clamp(46px,10vw,104px);line-height:1;display:inline-block;animation:pop .6s cubic-bezier(.3,1.6,.5,1) both}
+.art.fx-bounce .it{animation:pop .6s cubic-bezier(.3,1.6,.5,1) both,bounce 1s ease-in-out .6s infinite}
+.art.fx-spin .it{animation:pop .6s both,wiggle 1.4s ease-in-out .6s infinite}
+.art .label{width:100%;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(1.4rem,4vw,2.6rem);color:var(--ink);animation:pop .5s .3s both}
+@keyframes pop{from{transform:scale(0) rotate(-20deg);opacity:0}}
+@keyframes bounce{50%{transform:translateY(-18%)}}
+@keyframes wiggle{25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+.far{font-size:clamp(22px,4vw,40px)!important;align-self:flex-start;margin-top:4%}
+.prep{position:relative;width:min(260px,60%);aspect-ratio:1.2}
+.prep .box,.prep .cat{position:absolute;line-height:1;transition:all .7s cubic-bezier(.3,1.4,.5,1)}
+.prep .box{font-size:clamp(70px,13vw,130px);left:50%;top:38%;transform:translateX(-50%);z-index:2}
+.prep .cat{font-size:clamp(38px,7vw,70px);z-index:1}
+.prep.in .cat{left:50%;top:30%;transform:translateX(-50%)}
+.prep.on .cat{left:50%;top:6%;transform:translateX(-50%);z-index:3}
+.prep.on .box{top:42%}
+.prep.under .box{top:4%}
+.prep.under .cat{left:50%;top:72%;transform:translateX(-50%)}
+.prep.next .box{left:36%}
+.prep.next .cat{left:76%;top:56%;z-index:3}
+.prep.behind .cat{left:60%;top:24%;z-index:1}
+.caption{position:absolute;left:24%;right:3%;bottom:4%;background:var(--paper);border:3px solid var(--ink);border-radius:20px;padding:10px 16px;font-family:var(--display);font-weight:700;font-size:clamp(1.05rem,2.6vw,1.6rem);line-height:1.2;z-index:4;min-height:22%;display:flex;align-items:center}
+.caption::before{content:"";position:absolute;left:-14px;bottom:18px;border:10px solid transparent;border-right:14px solid var(--ink)}
+.caption b,.caption mark{color:var(--coral);background:none;font-weight:800}
+.finale{position:absolute;inset:0;z-index:6;background:rgba(255,255,255,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:16px}
+.finale .bigstar{font-size:clamp(64px,14vw,120px);animation:pop .7s cubic-bezier(.3,1.6,.5,1) both,wiggle 1.4s .7s infinite}
+.finale h4{font-family:var(--display);font-size:clamp(1.6rem,5vw,2.6rem);margin:0}
+.pbar{display:flex;gap:6px;padding:12px 16px 0}
+.pbar i{flex:1;height:10px;border-radius:99px;background:var(--line);border:2px solid var(--ink)}
+.pbar i.on{background:var(--sun)}
+.pctrl{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 16px 16px;flex-wrap:wrap}
+.playbtn{width:64px;height:64px;border-radius:50%;border:3px solid var(--ink);background:var(--coral);color:#fff;font-size:1.6rem;box-shadow:0 4px 0 var(--ink);display:grid;place-items:center}
+.nosound{font-size:.85rem;color:var(--ink-2);font-weight:700;text-align:center;padding:0 16px 12px}
+@media (max-width:600px){
+  .stage{aspect-ratio:4/5}
+  .stage-owl{width:28%;bottom:30%;left:2%}
+  .art{left:4%;right:4%;top:6%;bottom:42%}
+  .caption{left:4%;right:4%;bottom:4%;min-height:24%}
+  .caption::before{left:28px;bottom:auto;top:-22px;border:10px solid transparent;border-bottom:12px solid var(--ink)}
+}
+
+/* Owl parts */
+.owl .lid{transform-box:fill-box;transform-origin:center top;transform:scaleY(0);animation:blink 4.5s infinite}
+@keyframes blink{0%,94%,100%{transform:scaleY(0)}97%{transform:scaleY(1)}}
+.owl .mouth{transform-box:fill-box;transform-origin:center top;transform:scaleY(.15)}
+.talking .owl .mouth{animation:talk .22s ease-in-out infinite alternate}
+.talking .owl{animation:nod .5s ease-in-out infinite alternate}
+@keyframes talk{to{transform:scaleY(1)}}
+@keyframes nod{to{transform:rotate(-3deg) translateY(-3px)}}
+.owl .wingR{transform-box:fill-box;transform-origin:top left;animation:wave 3s ease-in-out infinite}
+@keyframes wave{0%,80%,100%{transform:rotate(0)}88%{transform:rotate(-25deg)}94%{transform:rotate(-5deg)}}
+
+/* Tense modal */
+.thead{padding:18px 18px 16px;color:#fff;border-bottom:3px solid var(--ink)}
+.thead .kicker{font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;opacity:.9}
+.thead h3{font-size:clamp(1.8rem,5vw,2.6rem)}
+.tbody{padding:18px;display:grid;gap:18px}
+.formula{background:var(--sun-soft);border:3px solid var(--ink);border-radius:18px;padding:12px 16px;font-family:var(--display);font-weight:700;font-size:1.3rem}
+.formula small{display:block;font-family:var(--body);font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;color:var(--ink-2);font-weight:800}
+.formula b{color:var(--coral)}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.signals{display:flex;flex-wrap:wrap;gap:6px}
+.signals span{border:2px solid var(--ink);border-radius:999px;padding:2px 10px;font-weight:800;font-size:.88rem;background:var(--paper)}
+.tl{position:relative;height:74px;margin:4px 6px 0}
+.tl .line{position:absolute;left:0;right:0;top:30px;height:4px;background:var(--ink);border-radius:9px}
+.tl .line::after{content:"";position:absolute;right:-4px;top:-7px;border-left:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent}
+.tl .now{position:absolute;left:50%;top:14px;width:4px;height:36px;background:var(--coral);transform:translateX(-50%);border-radius:9px}
+.tl .lab{position:absolute;top:52px;transform:translateX(-50%);font-weight:800;font-size:.8rem;color:var(--ink-2)}
+.tl .lab.n{color:var(--coral)}
+.tl .dot{position:absolute;top:22px;width:20px;height:20px;border-radius:50%;background:var(--sun);border:3px solid var(--ink);transform:translateX(-50%)}
+.tl .dot.ghost{background:var(--paper);border-style:dashed}
+.tl .band{position:absolute;top:21px;height:22px;background:repeating-linear-gradient(45deg,var(--sun),var(--sun) 6px,#FFDB7A 6px,#FFDB7A 12px);border:3px solid var(--ink);border-radius:99px}
+.tl .arrow{position:absolute;top:8px;height:16px;border:3px solid var(--grape);border-bottom:0;border-radius:40px 40px 0 0}
+.story{background:var(--sky);border:3px solid var(--ink);border-radius:20px;padding:16px 18px;font-size:1.2rem;line-height:1.7}
+.story .s{border-radius:8px;transition:background .2s}
+.story .s.reading{background:var(--sun)}
+.story mark{background:var(--coral-soft);color:#B42318;font-weight:800;border-radius:6px;padding:0 3px}
+.story-title{font-family:var(--display);font-weight:800;font-size:1.3rem;margin:0 0 6px}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.quiz{display:grid;gap:14px}
+.q{border:3px solid var(--ink);border-radius:18px;padding:12px 14px}
+.q p{margin:0 0 8px;font-weight:800;font-size:1.1rem}
+.q .opts{display:flex;flex-wrap:wrap;gap:8px}
+.q .opts button{border:3px solid var(--ink);background:var(--paper);border-radius:14px;padding:6px 14px;font-weight:800}
+.q .opts button.right{background:var(--grass);color:#fff}
+.q .opts button.wrong{background:var(--coral-soft);animation:shake .4s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.h4{font-family:var(--display);font-weight:800;font-size:1.25rem;margin:0}
+@media (max-width:600px){.twocol{grid-template-columns:1fr}}
+
+/* Quiz */
+.modal#quizModal{z-index:120}
+.qz{padding:18px;display:grid;gap:16px}
+.qprog{display:flex;gap:5px}
+.qprog i{flex:1;height:12px;border-radius:99px;border:2px solid var(--ink);background:var(--line)}
+.qprog i.ok{background:var(--grass)}.qprog i.no{background:var(--coral)}.qprog i.cur{background:var(--sun)}
+.qnum{font-weight:800;color:var(--ink-2);font-size:.9rem;display:flex;justify-content:space-between;align-items:center;gap:8px;font-variant-numeric:tabular-nums}
+.qtext{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,4.5vw,2.1rem);line-height:1.2;margin:0}
+.qtext .blank{display:inline-block;min-width:2.6em;border-bottom:4px dashed var(--grape)}
+.qopts{display:grid;gap:10px}
+.qopts button{border:3px solid var(--ink);background:var(--paper);border-radius:18px;padding:12px 16px;font-weight:800;font-size:1.2rem;text-align:left;box-shadow:0 4px 0 var(--ink)}
+.qopts button:hover:not(:disabled){background:var(--sun-soft)}
+.qopts button.right{background:var(--grass);color:#fff}
+.qopts button.wrong{background:var(--coral-soft);animation:shake .4s}
+.qopts button:disabled{cursor:default}
+.qfeed{font-weight:800;font-size:1.1rem;min-height:1.6em}
+.qfeed.ok{color:var(--grass)}.qfeed.no{color:#C2410C}
+.qend{text-align:center;display:grid;gap:12px;justify-items:center;padding-block:10px}
+.qend .score{font-family:var(--display);font-weight:800;font-size:4rem;line-height:1;font-variant-numeric:tabular-nums}
+.qend .rate{font-size:2.6rem;letter-spacing:6px}
+.qend .rate .off{filter:grayscale(1);opacity:.3}
+.musicbtn{border:3px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:999px;padding:4px 12px;font-weight:800;font-size:.9rem;flex:none}
+.musicbtn[aria-pressed="false"]{opacity:.7}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(140%);background:var(--ink);color:#fff;border-radius:999px;padding:10px 20px;font-weight:800;z-index:200;visibility:hidden;transition:transform .35s cubic-bezier(.3,1.5,.5,1),visibility 0s .35s}
+.toast.show{transform:translateX(-50%) translateY(0);visibility:visible;transition:transform .35s cubic-bezier(.3,1.5,.5,1)}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="Let Kids Have Fun with Randa, home"><span class="owl-slot"></span>Fun with Randa</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#cartoons">Cartoons</a>
+      <a href="#tenses">12 Tenses</a>
+      <a href="#flashcards">Flashcards</a>
+      <a href="#parents">Parents</a>
+    </nav>
+    <div class="stars" title="Stars you have earned"><span aria-hidden="true">⭐</span><span id="starCount">0</span></div>
+  </div>
+</header>
+
+<main id="home">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Let Kids <span class="fun" aria-label="Have Fun"></span><br>with <span class="randa">Randa</span></h1>
+        <p class="lead">Cartoon grammar lessons, the 12 English tenses told as stories, and bright flashcards for children aged 3 to 12.</p>
+        <div class="big-btns">
+          <a class="bigbtn b-coral" href="#cartoons">▶ Watch cartoons</a>
+          <a class="bigbtn b-grass" href="#tenses">📖 Tense stories</a>
+          <a class="bigbtn b-grape" href="#flashcards">🃏 Flashcards</a>
+        </div>
+      </div>
+      <div class="hero-owl"><div class="say">Hoot! I'm Ollie!</div><span class="owl-slot"></span></div>
+    </div>
+  </div>
+
+  <div class="wrap ages">
+    <div class="ages-box" role="group" aria-label="Choose an age">
+      <h2>Who's learning?</h2>
+      <button class="chip" data-band="all" aria-pressed="true">Everyone<small>ages 3–12</small></button>
+      <button class="chip" data-band="little" aria-pressed="false">Little Stars<small>ages 3–5</small></button>
+      <button class="chip" data-band="explore" aria-pressed="false">Explorers<small>ages 6–8</small></button>
+      <button class="chip" data-band="champ" aria-pressed="false">Champions<small>ages 9–12</small></button>
+    </div>
+  </div>
+
+  <section class="zone wrap" id="cartoons">
+    <div class="zone-head">
+      <h2><span class="blob" style="background:var(--coral)" aria-hidden="true">▶</span>Cartoon Grammar</h2>
+      <p>Press play. Ollie the owl talks you through each lesson, scene by scene. Finish a cartoon to win a star.</p>
+    </div>
+    <div class="vgrid" id="vgrid"></div>
+  </section>
+
+  <section class="zone wrap" id="tenses">
+    <div class="zone-head">
+      <h2><span class="blob" style="background:var(--grass)" aria-hidden="true">✦</span>The 12 Tenses</h2>
+      <p>Meet Lulu the rabbit and Max the turtle on Sunny Farm. Every tense has its own story, a cartoon, a timeline and a mini quiz.</p>
+    </div>
+    <div class="board" id="board"></div>
+  </section>
+
+  <section class="zone wrap" id="flashcards">
+    <div class="zone-head">
+      <h2><span class="blob" style="background:var(--grape);color:#fff" aria-hidden="true">★</span>Flashcards</h2>
+      <p>Tap the card to flip it. Hear the word, see it in Arabic, and give yourself a star when you know it.</p>
+    </div>
+    <div class="fc-wrap">
+      <div class="decks" id="decks" role="group" aria-label="Flashcard decks"></div>
+      <div class="fc-stage">
+        <div class="fc-title" id="fcTitle"></div>
+        <button class="card3d" id="card" aria-label="Flip card">
+          <div class="card-in">
+            <div class="face front" id="fcFront"></div>
+            <div class="face back" id="fcBack"></div>
+          </div>
+        </button>
+        <div class="known" id="known" aria-hidden="true"></div>
+        <div class="fc-ctrl">
+          <button class="rbtn" id="fcPrev" aria-label="Previous card">◀</button>
+          <span class="count" id="fcCount">1 / 12</span>
+          <button class="rbtn" id="fcNext" aria-label="Next card">▶</button>
+        </div>
+        <div class="fc-ctrl">
+          <button class="rbtn" id="fcSay">🔊 Say it</button>
+          <button class="rbtn solid" id="fcKnow">⭐ I know it!</button>
+          <button class="rbtn" id="fcShuffle">🔀 Shuffle</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="parents" id="parents">
+  <div class="wrap">
+    <div>
+      <h2>For parents</h2>
+      <p>Let Kids Have Fun with Randa is made by Dr. Randa Hassanen, an English teacher helping children in Egypt and across the Arab world learn English with confidence. Short cartoons, stories and flashcards turn practice into play, and the Arabic on every card helps young learners connect new words to what they already know.</p>
+      <p>Would you like lessons for your child? Get in touch by email or WhatsApp.</p>
+    </div>
+    <div class="contact">
+      <div class="crow"><span class="l">Email</span><code id="cEmail">randahassanen2023@gmail.com</code><button data-copy="cEmail">Copy</button></div>
+      <div class="crow"><span class="l">Phone / WhatsApp (Egypt)</span><code id="cPhone">01098700116</code><button data-copy="cPhone">Copy</button></div>
+    </div>
+  </div>
+  <div class="wrap foot">© Dr. Randa Hassanen · Let Kids Have Fun with Randa</div>
+</footer>
+
+<!-- Cartoon player -->
+<div class="modal" id="playerModal" hidden role="dialog" aria-modal="true" aria-labelledby="pTitle">
+  <div class="sheet">
+    <div class="sheet-head"><h3 id="pTitle">Cartoon</h3><button class="xbtn" data-close="playerModal" aria-label="Close">✕</button></div>
+    <div class="stage" id="stage">
+      <div class="sunball"></div><div class="cloud c1"></div><div class="cloud c2"></div><div class="ground"></div>
+      <div class="stage-owl" id="stageOwl"><span class="owl-slot"></span></div>
+      <div class="art" id="pArt"></div>
+      <div class="caption" id="pCap" aria-live="polite"></div>
+      <div class="finale" id="pFinale" hidden>
+        <div class="bigstar" aria-hidden="true">⭐</div>
+        <h4>Hooray! Well done!</h4>
+        <div class="actions" style="justify-content:center">
+          <button class="rbtn" id="pAgain">↺ Watch again</button>
+          <button class="rbtn" id="pQuiz" style="background:var(--grape);color:#fff">📝 Take the quiz</button>
+          <button class="rbtn solid" data-close="playerModal">Done</button>
+        </div>
+      </div>
+    </div>
+    <div class="pbar" id="pBar"></div>
+    <div class="pctrl">
+      <button class="rbtn" id="pPrev" aria-label="Previous scene">◀</button>
+      <button class="playbtn" id="pPlay" aria-label="Play">▶</button>
+      <button class="rbtn" id="pNext" aria-label="Next scene">▶</button>
+      <button class="rbtn" id="pSound" aria-pressed="true">🔊 Sound on</button>
+    </div>
+    <div class="nosound" id="noSound" hidden>Sound isn't available in this browser, so the words move on by themselves. Read along with Ollie!</div>
+  </div>
+</div>
+
+<!-- Tense detail -->
+<div class="modal" id="tenseModal" hidden role="dialog" aria-modal="true" aria-labelledby="tTitle">
+  <div class="sheet">
+    <div class="thead" id="tHead">
+      <div style="display:flex;gap:12px;align-items:flex-start">
+        <div style="flex:1;min-width:0"><div class="kicker" id="tKick"></div><h3 id="tTitle"></h3></div>
+        <button class="musicbtn" id="tMusic" aria-pressed="true">🎵 Music on</button>
+        <button class="xbtn" data-close="tenseModal" aria-label="Close" style="color:var(--ink)">✕</button>
+      </div>
+    </div>
+    <div class="tbody" id="tBody"></div>
+  </div>
+</div>
+
+<!-- Quiz -->
+<div class="modal" id="quizModal" hidden role="dialog" aria-modal="true" aria-labelledby="qTitle">
+  <div class="sheet" style="width:min(640px,100%)">
+    <div class="sheet-head"><h3 id="qTitle">Quiz</h3><button class="xbtn" data-close="quizModal" aria-label="Close">✕</button></div>
+    <div class="qz" id="qz"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- Ollie the owl ---------- */
+const OWL = `<svg class="owl" viewBox="0 0 120 150" aria-hidden="true">
+<path d="M22 46 L28 14 L50 34 Z" fill="#5B3FD9" stroke="#22305B" stroke-width="3" stroke-linejoin="round"/>
+<path d="M98 46 L92 14 L70 34 Z" fill="#5B3FD9" stroke="#22305B" stroke-width="3" stroke-linejoin="round"/>
+<ellipse cx="60" cy="84" rx="46" ry="56" fill="#7454F5" stroke="#22305B" stroke-width="3"/>
+<ellipse cx="17" cy="94" rx="10" ry="24" fill="#5B3FD9" stroke="#22305B" stroke-width="3"/>
+<ellipse class="wingR" cx="103" cy="94" rx="10" ry="24" fill="#5B3FD9" stroke="#22305B" stroke-width="3"/>
+<ellipse cx="60" cy="104" rx="28" ry="30" fill="#D9D0FF"/>
+<path d="M48 98 q4 4 8 0 M64 98 q4 4 8 0 M56 110 q4 4 8 0" stroke="#A996F7" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+<circle cx="42" cy="62" r="18" fill="#fff" stroke="#22305B" stroke-width="3"/>
+<circle cx="78" cy="62" r="18" fill="#fff" stroke="#22305B" stroke-width="3"/>
+<circle cx="45" cy="64" r="8.5" fill="#22305B"/><circle cx="81" cy="64" r="8.5" fill="#22305B"/>
+<circle cx="48" cy="60" r="3" fill="#fff"/><circle cx="84" cy="60" r="3" fill="#fff"/>
+<ellipse class="lid" cx="42" cy="62" rx="19" ry="19" fill="#7454F5"/><ellipse class="lid" cx="78" cy="62" rx="19" ry="19" fill="#7454F5"/>
+<path d="M53 76 L67 76 L60 87 Z" fill="#FFA62B" stroke="#22305B" stroke-width="2.5" stroke-linejoin="round"/>
+<ellipse class="mouth" cx="60" cy="89" rx="6" ry="5" fill="#C2410C"/>
+<circle cx="30" cy="80" r="5" fill="#FF8FA3" opacity=".7"/><circle cx="90" cy="80" r="5" fill="#FF8FA3" opacity=".7"/>
+<path d="M44 138 l-6 8 M50 139 l0 9 M56 138 l6 8 M66 138 l-6 8 M72 139 l0 9 M78 138 l6 8" stroke="#FFA62B" stroke-width="4" stroke-linecap="round"/>
+<path d="M30 26 L60 14 L90 26 L60 38 Z" fill="#22305B"/><rect x="48" y="28" width="24" height="9" fill="#22305B"/>
+<path d="M88 26 L88 42" stroke="#FFC83D" stroke-width="3"/><circle cx="88" cy="44" r="4" fill="#FFC83D"/>
+</svg>`;
+document.querySelectorAll('.owl-slot').forEach(s => s.outerHTML = OWL);
+
+/* ---------- Title letters ---------- */
+(() => {
+  const el = document.querySelector('.hero h1 .fun'), cols = ['#FF6B5B','#26A866','#7454F5','#FFFFFF','#FF6B5B','#26A866','#7454F5','#FFFFFF'];
+  el.innerHTML = [...'Have Fun'].map((c,i) => c === ' ' ? '<span style="width:.3em"></span>' : `<span aria-hidden="true" style="color:${cols[i%cols.length]};animation-delay:${i*.12}s">${c}</span>`).join('');
+})();
+
+/* ---------- Content: cartoon grammar ---------- */
+const VIDEOS = [
+ {id:'nouns',title:'Nouns: Naming Words',ages:[3,6],color:'#FFC83D',icon:'🐶',scenes:[
+  {a:'🦉',t:'Hello! I am Ollie. Today we learn <b>nouns</b>!',fx:'bounce'},
+  {a:'👧 👦 👩‍🏫',t:'A noun can be a <b>person</b>. Girl, boy, teacher.'},
+  {a:'🐶 🐱 🐘',t:'A noun can be an <b>animal</b>. Dog, cat, elephant.'},
+  {a:'🏠 🏫 🌳',t:'A noun can be a <b>place</b>. House, school, park.'},
+  {a:'⚽ 🍎 🚗',t:'A noun can be a <b>thing</b>. Ball, apple, car.'},
+  {a:'⭐',t:'Great job! Can you find three nouns in your room?',fx:'spin'}]},
+ {id:'verbs',title:'Verbs: Action Words',ages:[3,6],color:'#7ED957',icon:'🏃',scenes:[
+  {a:'🦉',t:'Verbs are <b>action words</b>. They tell us what we do!',fx:'bounce'},
+  {a:'🏃',t:'I can <b>run</b>. Run, run, run!',fx:'bounce'},
+  {a:'🦘',t:'A kangaroo can <b>jump</b>. Jump, jump, jump!',fx:'bounce'},
+  {a:'🏊',t:'A fish and I can <b>swim</b>. Splash!'},
+  {a:'😴',t:'At night we <b>sleep</b>. Shhh!'},
+  {a:'🍽️ 🥤',t:'We <b>eat</b> and we <b>drink</b>. Yum!'},
+  {a:'💃',t:'Now stand up and <b>dance</b> with me!',fx:'spin'}]},
+ {id:'plurals',title:'One and Many: Plurals',ages:[3,7],color:'#FF9EB5',icon:'🐱',scenes:[
+  {a:'🐱',t:'One <b>cat</b>.'},
+  {a:'🐱 🐱',t:'Two <b>cats</b>! For more than one, we add <b>s</b>.'},
+  {a:'⚽ ⚽ ⚽',t:'One ball, three <b>balls</b>.'},
+  {a:'📦 📦',t:'One box, two <b>boxes</b>. After x, we add <b>es</b>.'},
+  {a:'👶 👶',t:'One baby, two <b>babies</b>. Y changes to <b>ies</b>.'},
+  {a:'🐭 🐭 🐭',t:'Some words are special! One mouse, three <b>mice</b>.'},
+  {a:'🧒 🧒',t:'One child, two <b>children</b>. Well done!',fx:'bounce'}]},
+ {id:'prepositions',title:'In, On, Under',ages:[3,7],color:'#8FD3FF',icon:'📦',scenes:[
+  {prep:'in',t:'The cat is <b>in</b> the box.'},
+  {prep:'on',t:'The cat is <b>on</b> the box.'},
+  {prep:'under',t:'The cat is <b>under</b> the box.'},
+  {prep:'next',t:'The cat is <b>next to</b> the box.'},
+  {prep:'behind',t:'The cat is <b>behind</b> the box. Peekaboo!'},
+  {prep:'in',t:'Where is the cat now? <b>In</b> the box!'}]},
+ {id:'aan',title:'A or An?',ages:[4,8],color:'#FFB36B',icon:'🍎',scenes:[
+  {a:'🦉',t:'Let’s learn <b>a</b> and <b>an</b>!',fx:'bounce'},
+  {a:'🐱 ⚽ 🐶',t:'We say <b>a</b> before most letters: <b>a</b> cat, <b>a</b> ball, <b>a</b> dog.'},
+  {a:'',label:'a  e  i  o  u',t:'These are vowels: a, e, i, o, u.'},
+  {a:'🍎 🥚 🍊',t:'Before a vowel sound we say <b>an</b>: <b>an</b> apple, <b>an</b> egg, <b>an</b> orange.'},
+  {a:'☂️ 🍦',t:'<b>An</b> umbrella. <b>An</b> ice cream.'},
+  {a:'🐘',t:'Quick quiz! A elephant or an elephant?'},
+  {a:'🐘 ⭐',t:'<b>An</b> elephant! Well done!',fx:'bounce'}]},
+ {id:'adjectives',title:'Adjectives: Describing Words',ages:[5,9],color:'#C9B8FF',icon:'🐘',scenes:[
+  {a:'🦉',t:'Adjectives <b>describe</b> nouns. They tell us more!',fx:'bounce'},
+  {a:'🐘',t:'A <b>big</b> elephant.'},
+  {a:'🐭',t:'A <b>small</b> mouse.'},
+  {a:'🍎',t:'A <b>red</b> apple.'},
+  {a:'🌞',t:'A <b>happy</b> sun.',fx:'spin'},
+  {a:'🔥 🧊',t:'A <b>hot</b> fire and a <b>cold</b> ice cube.'},
+  {a:'🐢',t:'A <b>slow</b>, <b>green</b> turtle. Two adjectives!'}]},
+ {id:'amisare',title:'Am, Is, Are',ages:[5,9],color:'#FFE066',icon:'😊',scenes:[
+  {a:'😊',t:'I <b>am</b> happy.'},
+  {a:'🦒',t:'He <b>is</b> tall.'},
+  {a:'👩‍⚕️',t:'She <b>is</b> a doctor.'},
+  {a:'☀️',t:'It <b>is</b> hot today.'},
+  {a:'👫',t:'We <b>are</b> friends.'},
+  {a:'🐱 🐱',t:'They <b>are</b> cats.'},
+  {a:'🦉',t:'I <b>am</b>, he, she, it <b>is</b>, we, you, they <b>are</b>!',fx:'bounce'}]},
+ {id:'thisthat',title:'This, That, These, Those',ages:[5,9],color:'#9BE7C4',icon:'👉',scenes:[
+  {a:'👉 🍎',t:'<b>This</b> apple is near me.'},
+  {a:'👉 🍎',far:true,t:'<b>That</b> apple is far away.'},
+  {a:'👉 🍎 🍎 🍎',t:'<b>These</b> apples are near me.'},
+  {a:'👉 🍎 🍎 🍎',far:true,t:'<b>Those</b> apples are far away.'},
+  {a:'🦉',t:'Near: this, these. Far: that, those!',fx:'bounce'}]},
+ {id:'can',title:'Can and Can’t',ages:[5,9],color:'#FFA8A0',icon:'🐟',scenes:[
+  {a:'🐟',t:'A fish <b>can</b> swim.'},
+  {a:'🐟 ❌',t:'A fish <b>can’t</b> fly.'},
+  {a:'🐦',t:'A bird <b>can</b> fly.',fx:'bounce'},
+  {a:'🐧',t:'A penguin <b>can’t</b> fly, but it <b>can</b> swim!'},
+  {a:'📖',t:'I <b>can</b> read. What <b>can</b> you do?'}]},
+ {id:'pronouns',title:'He, She, It, They',ages:[6,10],color:'#A0C4FF',icon:'👧',scenes:[
+  {a:'👧',label:'Lulu → she',t:'Lulu is a girl. <b>She</b> is seven.'},
+  {a:'👦',label:'Sami → he',t:'Sami is a boy. <b>He</b> likes football.'},
+  {a:'⚽',label:'the ball → it',t:'The ball is new. <b>It</b> is red.'},
+  {a:'👧 👦',label:'Lulu and Sami → they',t:'Lulu and Sami are friends. <b>They</b> play together.'},
+  {a:'🙋',label:'you and me → we',t:'You and I learn English. <b>We</b> are clever!',fx:'bounce'}]},
+ {id:'compare',title:'Big, Bigger, Biggest',ages:[7,11],color:'#FFD6A5',icon:'🐎',scenes:[
+  {a:'🐕',t:'A dog is <b>big</b>.'},
+  {sizes:[.6,1],a:'🐕 🐎',t:'A horse is <b>bigger</b> than a dog.'},
+  {sizes:[.5,.8,1.2],a:'🐕 🐎 🐘',t:'An elephant is the <b>biggest</b>!'},
+  {a:'🐢 🐇 🐆',t:'Fast, <b>faster</b>, the <b>fastest</b>!'},
+  {a:'⭐',label:'good → better → best',t:'Some words are special: good, <b>better</b>, the <b>best</b>.'},
+  {a:'🦉',t:'You are the <b>best</b> learner!',fx:'spin'}]},
+ {id:'longshort',title:'Comparatives & Superlatives: Short and Long Adjectives',ages:[8,12],color:'#FFCF99',icon:'🏆',scenes:[
+  {a:'🦉',t:'Let\u2019s compare! A <b>comparative</b> compares two things. A <b>superlative</b> picks one from three or more.',fx:'bounce'},
+  {a:'🐭 🐱',label:'small → smaller → the smallest',t:'<b>Short adjectives</b> have one syllable. Add <b>-er</b> and <b>-est</b>: small, smaller, the smallest.'},
+  {sizes:[.6,.8,1.2],a:'🐕 🐎 🦒',label:'tall → taller → the tallest',t:'A horse is <b>taller</b> than a dog. The giraffe is <b>the tallest</b>.'},
+  {a:'🍰',label:'nice → nicer → the nicest',t:'Ends in <b>e</b>? Just add <b>-r</b> or <b>-st</b>: nice, nicer, the nicest.'},
+  {a:'🐘 🔥',label:'big → bigger → the biggest',t:'One vowel, then one consonant at the end? <b>Double</b> the last letter: big, bigger, the biggest. Hot, hotter, the hottest.'},
+  {a:'😊',label:'happy → happier → the happiest',t:'Ends in <b>y</b>? Change the y to <b>i</b>: happy, happier, the happiest. Easy, easier, the easiest.'},
+  {a:'🦋',label:'beautiful → more beautiful → the most beautiful',t:'<b>Long adjectives</b> have two or more syllables. Use <b>more</b> and <b>the most</b>.'},
+  {a:'📕 💎',label:'expensive → more expensive → the most expensive',t:'A diamond is <b>more expensive</b> than a book. It is <b>the most expensive</b> stone.'},
+  {a:'⭐ 🌧️',label:'good → better → the best · bad → worse → the worst',t:'Some adjectives are special: good, <b>better</b>, <b>the best</b>. Bad, <b>worse</b>, <b>the worst</b>.'},
+  {a:'🦉',t:'Remember: use <b>than</b> after a comparative, and <b>the</b> before a superlative!',fx:'spin'}]},
+ {id:'questions',title:'Who, What, Where?',ages:[7,12],color:'#CDB4DB',icon:'❓',scenes:[
+  {a:'👩',t:'<b>Who</b> asks about people. Who is she? She is my mum.'},
+  {a:'🪁',t:'<b>What</b> asks about things. What is it? It is a kite.'},
+  {prep:'under',t:'<b>Where</b> asks about places. Where is the cat? Under the box!'},
+  {a:'⏰',t:'<b>When</b> asks about time. When is lunch? At one o’clock.'},
+  {a:'☔',t:'<b>Why</b> asks for a reason. Why are you wet? Because it is raining!'},
+  {a:'🍬 🍬 🍬',t:'<b>How many</b> asks about numbers. How many sweets? Three!'}]}
+];
+
+/* ---------- Content: the 12 tenses ---------- */
+const TENSES = [
+ {id:'ps',group:'present',name:'Present Simple',ages:[5,12],em:'🐰',ex:'She <em>eats</em>.',story:'Lulu’s Every Day',
+  formula:'I / you / we / they <b>play</b> · he / she / it <b>plays</b>',use:'Things we do again and again, and things that are always true.',signals:['every day','always','usually','never'],
+  tl:{dots:[16,33,50,67,84]},
+  s:[['🐰⏰','Every morning, Lulu **wakes up** at seven o’clock.'],['🪥','She **brushes** her teeth.'],['🥕','She **eats** a crunchy carrot.'],['🐢🎒','Then she **walks** to school with Max the turtle.'],['🐢🐌','Max **walks** very slowly, but Lulu always **waits** for him.']]},
+ {id:'pc',group:'present',name:'Present Continuous',ages:[5,12],em:'⛄',ex:'She <em>is building</em>.',story:'Snow Day',
+  formula:'am / is / are + verb<b>-ing</b>',use:'Things happening right now, at this moment.',signals:['now','look!','listen!','at the moment'],
+  tl:{bands:[[42,58]]},
+  s:[['❄️','Look! It **is snowing** on Sunny Farm.'],['🐰⛄','Lulu **is building** a big snowman.'],['🐢🧣','Max **is wearing** a long red scarf.'],['🦆🦆','The ducks **are sliding** on the ice.'],['😂','Everyone **is laughing**!']]},
+ {id:'pp',group:'present',name:'Present Perfect',ages:[8,12],em:'⚽',ex:'She <em>has lost</em>.',story:'The Lost Ball',
+  formula:'has / have + <b>past participle</b>',use:'Something happened before now, and it still matters now.',signals:['just','already','ever','never','yet'],
+  tl:{dots:[22],arrow:[22,50]},
+  s:[['🐰😟','Oh no! Lulu **has lost** her blue ball.'],['🛏️','She **has looked** under her bed.'],['🌷','She **has looked** in the garden too.'],['🐰❓','“**Have** you **seen** my ball, Max?” she asks.'],['🐢⚽','Max smiles. “Yes! I **have** just **found** it in the pond!”']]},
+ {id:'ppc',group:'present',name:'Present Perfect Continuous',ages:[9,12],em:'⛰️',ex:'He <em>has been walking</em>.',story:'Up the Hill',
+  formula:'has / have + <b>been</b> + verb<b>-ing</b>',use:'Something started in the past and is still going on now.',signals:['for','since','all day','how long'],
+  tl:{bands:[[20,50]]},
+  s:[['🐢⛰️','Max **has been walking** up the hill since breakfast.'],['🐰⏳','Lulu **has been waiting** at the top for an hour.'],['☁️☁️','“I **have been counting** clouds,” she says. “Forty-two so far!”'],['🐢😅','“And I **have been dreaming** of a nap!” says Max.']]},
+ {id:'pas',group:'past',name:'Past Simple',ages:[6,12],em:'🏖️',ex:'They <em>went</em>.',story:'A Day at the Beach',
+  formula:'verb + <b>-ed</b> (play → played) or a special form (go → <b>went</b>)',use:'Finished actions at a time in the past.',signals:['yesterday','last week','ago','in 2020'],
+  tl:{dots:[20]},
+  s:[['🏖️','Yesterday, Lulu and Max **went** to the beach.'],['🏰','They **built** a big sandcastle.'],['🐢🌊','Max **swam** in the blue sea.'],['🐚','Lulu **found** a pink shell.'],['🍦🍦','They **ate** ice cream and **walked** home happy.']]},
+ {id:'pac',group:'past',name:'Past Continuous',ages:[7,12],em:'🌙',ex:'She <em>was sleeping</em>.',story:'The Midnight Surprise',
+  formula:'was / were + verb<b>-ing</b>',use:'An action that was in progress at a time in the past.',signals:['while','when','at 9 o’clock last night'],
+  tl:{bands:[[12,30]]},
+  s:[['🌙🐰','Last night, Lulu **was sleeping** in her cosy bed.'],['🌕','The moon **was shining** brightly.'],['🦉🎶','The owls **were singing** softly.'],['🔔','Suddenly, the doorbell rang!'],['🐢🎂','Max **was standing** at the door with a cake.']]},
+ {id:'pap',group:'past',name:'Past Perfect',ages:[9,12],em:'🍰',ex:'It <em>had gone</em>.',story:'The Party Cake',
+  formula:'had + <b>past participle</b>',use:'Something that happened before another action in the past.',signals:['before','after','already','by the time'],
+  tl:{dots:[12],ghost:[32]},
+  s:[['🐰🎉','When Lulu arrived at the party, the cake **had** already **gone**!'],['🐢🍰','Max **had eaten** three big pieces.'],['🦆🦆','The ducks **had eaten** the rest.'],['🐐🎂','Luckily, Grandma Goat **had baked** a second cake!']]},
+ {id:'papc',group:'past',name:'Past Perfect Continuous',ages:[9,12],em:'🥁',ex:'He <em>had been practising</em>.',story:'Show Day',
+  formula:'had + <b>been</b> + verb<b>-ing</b>',use:'An action that went on for some time before something else in the past.',signals:['for','since','all morning','before'],
+  tl:{bands:[[6,30]],ghost:[34]},
+  s:[['🐢🥁','Max **had been practising** the drum for weeks.'],['🦆🧵','The ducks **had been sewing** costumes since Monday.'],['🐰💃','Lulu **had been dancing** all morning, so her feet were tired.'],['🎪👏','At the show, everyone clapped and cheered!']]},
+ {id:'fs',group:'future',name:'Future Simple',ages:[6,12],em:'🎁',ex:'He <em>will bring</em>.',story:'Lulu’s Birthday',
+  formula:'<b>will</b> + verb',use:'Things in the future: promises, guesses and quick decisions.',signals:['tomorrow','next week','soon','I think'],
+  tl:{dots:[80]},
+  s:[['🎂','Tomorrow is Lulu’s birthday.'],['🐰7️⃣','“I **will be** seven!” she says.'],['🐢🎁','Max **will bring** a present.'],['🐐🥕','Grandma Goat **will make** a carrot cake.'],['🌧️🎈','Maybe it **will rain**, but they **will have** fun!']]},
+ {id:'fc',group:'future',name:'Future Continuous',ages:[7,12],em:'🚀',ex:'They <em>will be flying</em>.',story:'Trip to the Moon',
+  formula:'<b>will be</b> + verb<b>-ing</b>',use:'An action that will be in progress at a time in the future.',signals:['this time tomorrow','at 5 o’clock next Monday'],
+  tl:{bands:[[70,88]]},
+  s:[['🚀','This time next week, Lulu and Max **will be flying** to the moon!'],['🐢🗺️','Max **will be holding** the map.'],['🐰👋','Lulu **will be waving** to the stars.'],['🌍','The Earth **will be getting** smaller and smaller.'],['🦉','What **will** you **be doing** next week?']]},
+ {id:'fp',group:'future',name:'Future Perfect',ages:[9,12],em:'🏅',ex:'He <em>will have finished</em>.',story:'The Long Walk',
+  formula:'<b>will have</b> + past participle',use:'Something that will be finished before a time in the future.',signals:['by Friday','by then','by the time'],
+  tl:{dots:[70],ghost:[86]},
+  s:[['🐢🏞️','Max is walking all the way around the big lake.'],['📅','By Friday, he **will have finished** his long walk.'],['🐰🎨','By then, Lulu **will have painted** a big banner.'],['🦆🎈','The ducks **will have blown** up fifty balloons.'],['🏅','“You **will have walked** ten kilometres!” says Lulu.']]},
+ {id:'fpc',group:'future',name:'Future Perfect Continuous',ages:[9,12],em:'📚',ex:'She <em>will have been learning</em>.',story:'English Superstars',
+  formula:'<b>will have been</b> + verb<b>-ing</b>',use:'How long an action will have gone on by a time in the future.',signals:['by next year','for two years','by December'],
+  tl:{bands:[[54,86]],ghost:[86]},
+  s:[['🐰📚','By the end of this year, Lulu **will have been learning** English for two years.'],['🐢📖','Max **will have been reading** one storybook every week.'],['🦆🎤','The ducks **will have been singing** English songs every morning.'],['🌟','Soon they will all be English superstars, just like you!']]}
+];
+
+/* ---------- Content: flashcards ---------- */
+const DECKS = [
+ {id:'animals',name:'Animals',ages:[3,8],color:'#FFE066',icon:'🐶',cards:[
+  {f:'🐱',w:'cat',ar:'قطة',x:'The cat says meow.'},{f:'🐶',w:'dog',ar:'كلب',x:'The dog says woof.'},{f:'🦁',w:'lion',ar:'أسد',x:'The lion is strong.'},
+  {f:'🐘',w:'elephant',ar:'فيل',x:'The elephant is big.'},{f:'🐒',w:'monkey',ar:'قرد',x:'The monkey likes bananas.'},{f:'🐰',w:'rabbit',ar:'أرنب',x:'The rabbit can hop.'},
+  {f:'🐟',w:'fish',ar:'سمكة',x:'The fish can swim.'},{f:'🐦',w:'bird',ar:'طائر',x:'The bird can fly.'},{f:'🐴',w:'horse',ar:'حصان',x:'The horse runs fast.'},
+  {f:'🐮',w:'cow',ar:'بقرة',x:'The cow gives us milk.'},{f:'🦆',w:'duck',ar:'بطة',x:'The duck says quack.'},{f:'🦒',w:'giraffe',ar:'زرافة',x:'The giraffe is tall.'}]},
+ {id:'colours',name:'Colours',ages:[3,6],color:'#FFB3C1',icon:'🎨',cards:[
+  {sw:'#E53935',w:'red',ar:'أحمر'},{sw:'#1E88E5',w:'blue',ar:'أزرق'},{sw:'#FDD835',w:'yellow',ar:'أصفر'},{sw:'#43A047',w:'green',ar:'أخضر'},
+  {sw:'#FB8C00',w:'orange',ar:'برتقالي'},{sw:'#8E24AA',w:'purple',ar:'بنفسجي'},{sw:'#F48FB1',w:'pink',ar:'وردي'},{sw:'#6D4C41',w:'brown',ar:'بني'},
+  {sw:'#212121',w:'black',ar:'أسود'},{sw:'#FFFFFF',w:'white',ar:'أبيض'}]},
+ {id:'numbers',name:'Numbers 1–10',ages:[3,6],color:'#B8F2E6',icon:'🔢',cards:
+  ['one','two','three','four','five','six','seven','eight','nine','ten'].map((w,i)=>({n:i+1,w,ar:['واحد','اثنان','ثلاثة','أربعة','خمسة','ستة','سبعة','ثمانية','تسعة','عشرة'][i]}))},
+ {id:'food',name:'Fruit & Food',ages:[3,8],color:'#FFC09F',icon:'🍎',cards:[
+  {f:'🍎',w:'apple',ar:'تفاحة'},{f:'🍌',w:'banana',ar:'موزة'},{f:'🍊',w:'orange',ar:'برتقالة'},{f:'🍇',w:'grapes',ar:'عنب'},
+  {f:'🍓',w:'strawberry',ar:'فراولة'},{f:'🍉',w:'watermelon',ar:'بطيخ'},{f:'🥕',w:'carrot',ar:'جزر'},{f:'🍞',w:'bread',ar:'خبز'},
+  {f:'🥛',w:'milk',ar:'حليب'},{f:'🥚',w:'egg',ar:'بيضة'},{f:'🧀',w:'cheese',ar:'جبن'},{f:'🍦',w:'ice cream',ar:'آيس كريم'}]},
+ {id:'feelings',name:'Feelings',ages:[4,9],color:'#FFF3B0',icon:'😊',cards:[
+  {f:'😊',w:'happy',ar:'سعيد',x:'I am happy!'},{f:'😢',w:'sad',ar:'حزين',x:'He is sad.'},{f:'😠',w:'angry',ar:'غاضب',x:'She is angry.'},
+  {f:'😨',w:'scared',ar:'خائف',x:'I am scared of the dark.'},{f:'🥱',w:'tired',ar:'متعب',x:'I am tired. Time for bed.'},{f:'😲',w:'surprised',ar:'متفاجئ',x:'Wow! I am surprised!'},
+  {f:'🤩',w:'excited',ar:'متحمس',x:'We are excited about the party.'},{f:'🤒',w:'sick',ar:'مريض',x:'He is sick today.'}]},
+ {id:'actions',name:'Action Verbs',ages:[4,9],color:'#A0E7A0',icon:'🏃',cards:[
+  {f:'🏃',w:'run',ar:'يجري',x:'I run in the park.'},{f:'🦘',w:'jump',ar:'يقفز',x:'Kangaroos jump high.'},{f:'🏊',w:'swim',ar:'يسبح',x:'We swim in the sea.'},
+  {f:'🍽️',w:'eat',ar:'يأكل',x:'I eat breakfast.'},{f:'🥤',w:'drink',ar:'يشرب',x:'I drink water.'},{f:'😴',w:'sleep',ar:'ينام',x:'Babies sleep a lot.'},
+  {f:'📖',w:'read',ar:'يقرأ',x:'I read a story.'},{f:'✏️',w:'write',ar:'يكتب',x:'I write my name.'},{f:'🎤',w:'sing',ar:'يغني',x:'She sings a song.'},
+  {f:'💃',w:'dance',ar:'يرقص',x:'We dance at parties.'},{f:'🍳',w:'cook',ar:'يطبخ',x:'Mum cooks dinner.'},{f:'🎨',w:'draw',ar:'يرسم',x:'I draw a cat.'}]},
+ {id:'opposites',name:'Opposites',ages:[5,10],color:'#BDE0FE',icon:'↔️',cards:[
+  {f:'🐘',w:'big',ar:'كبير',x:'opposite: small 🐭',say:'big. The opposite is small.'},{f:'🔥',w:'hot',ar:'حار',x:'opposite: cold 🧊',say:'hot. The opposite is cold.'},
+  {f:'🐆',w:'fast',ar:'سريع',x:'opposite: slow 🐢',say:'fast. The opposite is slow.'},{f:'☀️',w:'day',ar:'نهار',x:'opposite: night 🌙',say:'day. The opposite is night.'},
+  {f:'🦒',w:'tall',ar:'طويل',x:'opposite: short 🐧',say:'tall. The opposite is short.'},{f:'😊',w:'happy',ar:'سعيد',x:'opposite: sad 😢',say:'happy. The opposite is sad.'},
+  {f:'⬆️',w:'up',ar:'فوق',x:'opposite: down ⬇️',say:'up. The opposite is down.'},{f:'📖',w:'open',ar:'مفتوح',x:'opposite: closed 📕',say:'open. The opposite is closed.'}]},
+ {id:'irregular',name:'Irregular Verbs',ages:[8,12],color:'#D0BFFF',icon:'🔁',cards:[
+  {f:'🚶',w:'go',ar:'يذهب',x:'go · went · gone',say:'go, went, gone'},{f:'🍽️',w:'eat',ar:'يأكل',x:'eat · ate · eaten',say:'eat, ate, eaten'},
+  {f:'👀',w:'see',ar:'يرى',x:'see · saw · seen',say:'see, saw, seen'},{f:'✋',w:'take',ar:'يأخذ',x:'take · took · taken',say:'take, took, taken'},
+  {f:'✏️',w:'write',ar:'يكتب',x:'write · wrote · written',say:'write, wrote, written'},{f:'🥤',w:'drink',ar:'يشرب',x:'drink · drank · drunk',say:'drink, drank, drunk'},
+  {f:'🏊',w:'swim',ar:'يسبح',x:'swim · swam · swum',say:'swim, swam, swum'},{f:'🎁',w:'give',ar:'يعطي',x:'give · gave · given',say:'give, gave, given'},
+  {f:'🛒',w:'buy',ar:'يشتري',x:'buy · bought · bought',say:'buy, bought, bought'},{f:'🔨',w:'make',ar:'يصنع',x:'make · made · made',say:'make, made, made'},
+  {f:'💥',w:'break',ar:'يكسر',x:'break · broke · broken',say:'break, broke, broken'},{f:'🏃',w:'come',ar:'يأتي',x:'come · came · come',say:'come, came, come'}]}
+];
+
+/* ---------- Content: 10-question quizzes (answer index is the third item) ---------- */
+const QUIZ = {
+ nouns:[['Which one is an animal?',['🐶 dog','🏃 run','😊 happy'],0],['Which one is a person?',['👩‍🏫 teacher','🍎 apple','⚽ ball'],0],['Which one is a place?',['🏫 school','🐱 cat','🦘 jump'],0],['Which one is a thing?',['🚗 car','💃 dance','🔴 red'],0],['Which word is a noun?',['apple','eat','big'],0],['Which word is a noun?',['sleep','house','happy'],1],['Which word is NOT a noun?',['girl','tree','run'],2],['Find the noun: “The bird sings.”',['The','bird','sings'],1],['Find the noun: “I see a duck.”',['see','a','duck'],2],['Which word is a noun?',['slow','banana','swim'],1]],
+ verbs:[['Which one is an action word?',['🏃 run','🐱 cat','🔵 blue'],0],['Which word is a verb?',['jump','ball','red'],0],['Which word is a verb?',['table','swim','happy'],1],['What do we do at night?',['sleep','apple','school'],0],['What do we do with food?',['eat','read','blue'],0],['What do we do with a book?',['drink','read','jump'],1],['Find the verb: “Birds fly.”',['Birds','fly'],1],['Find the verb: “I sing a song.”',['I','sing','song'],1],['Which word is NOT a verb?',['dance','cook','chair'],2],['What does a fish do?',['swim','fly','write'],0]],
+ plurals:[['One cat, two ___.',['cat','cats','cates'],1],['One ball, three ___.',['balls','ballies','ball'],0],['One box, two ___.',['boxs','boxes','boxies'],1],['One baby, two ___.',['babys','babyes','babies'],2],['One mouse, three ___.',['mouses','mice','mices'],1],['One child, two ___.',['childs','childrens','children'],2],['One dog, four ___.',['dogs','doges','dog'],0],['One bus, two ___.',['buss','buses','busies'],1],['One apple, five ___.',['apples','appleses','apple'],0],['One lady, two ___.',['ladys','ladies','ladyes'],1]],
+ prepositions:[['The cat is inside the box. The cat is ___ the box.',['in','on','under'],0],['The book is on top of the table. The book is ___ the table.',['under','on','in'],1],['The ball is below the bed. The ball is ___ the bed.',['on','in','under'],2],['The dog is beside the house. The dog is ___ the house.',['next to','in','under'],0],['The boy is at the back of the tree. The boy is ___ the tree.',['on','behind','in'],1],['Fish live ___ the water.',['in','on','next to'],0],['We put a hat ___ our head.',['on','under','in'],0],['The shoes are on the floor below the chair. They are ___ the chair.',['under','on','in'],0],['The milk is inside the glass. The milk is ___ the glass.',['on','in','behind'],1],['We can’t see the sun. It is ___ the clouds.',['behind','in','under'],0]],
+ aan:[['___ cat',['a','an'],0],['___ apple',['a','an'],1],['___ egg',['a','an'],1],['___ dog',['a','an'],0],['___ orange',['a','an'],1],['___ ball',['a','an'],0],['___ umbrella',['a','an'],1],['___ elephant',['a','an'],1],['___ banana',['a','an'],0],['___ ice cream',['a','an'],1]],
+ adjectives:[['Which word describes something?',['big','dog','run'],0],['Which word is an adjective?',['table','happy','swim'],1],['An elephant is ___.',['small','big','thin'],1],['A mouse is ___.',['small','tall','huge'],0],['Fire is ___.',['cold','hot','blue'],1],['Ice is ___.',['hot','cold','sweet'],1],['A banana is ___.',['yellow','purple','black'],0],['Find the adjective: “a red apple”',['a','red','apple'],1],['Find the adjective: “The turtle is slow.”',['turtle','is','slow'],2],['Which word is NOT an adjective?',['happy','green','jump'],2]],
+ amisare:[['I ___ happy.',['am','is','are'],0],['He ___ tall.',['am','is','are'],1],['She ___ a doctor.',['am','is','are'],1],['It ___ hot today.',['am','is','are'],1],['We ___ friends.',['am','is','are'],2],['They ___ cats.',['am','is','are'],2],['You ___ clever.',['am','is','are'],2],['My mum ___ kind.',['am','is','are'],1],['The dogs ___ hungry.',['am','is','are'],2],['I ___ seven years old.',['am','is','are'],0]],
+ thisthat:[['One apple near me: ___ apple.',['This','These','Those'],0],['One apple far away: ___ apple.',['This','That','These'],1],['Many apples near me: ___ apples.',['This','That','These'],2],['Many apples far away: ___ apples.',['These','Those','That'],1],['___ is my bag. (It is in my hand.)',['This','Those','These'],0],['Look at ___ birds in the sky!',['this','these','those'],2],['___ shoes are new. (I am wearing them.)',['These','That','This'],0],['___ house over there is big.',['This','That','These'],1],['“These” means…',['many and near','one and far','many and far'],0],['“That” means…',['one and near','one and far','many and near'],1]],
+ can:[['A fish ___ swim.',['can','can’t'],0],['A fish ___ fly.',['can','can’t'],1],['A bird ___ fly.',['can','can’t'],0],['A penguin ___ fly.',['can','can’t'],1],['A penguin ___ swim.',['can','can’t'],0],['A dog ___ talk.',['can','can’t'],1],['A baby ___ drive a car.',['can','can’t'],1],['A kangaroo ___ jump.',['can','can’t'],0],['A cat ___ climb trees.',['can','can’t'],0],['An elephant ___ fly.',['can','can’t'],1]],
+ pronouns:[['Lulu is a girl. ___ is seven.',['He','She','It'],1],['Sami is a boy. ___ likes football.',['He','She','They'],0],['The ball is red. ___ is new.',['She','It','They'],1],['Lulu and Sami are friends. ___ play together.',['We','It','They'],2],['You and I are classmates. ___ learn English.',['We','They','He'],0],['My dad is a teacher. ___ is kind.',['She','He','It'],1],['The cats are hungry. ___ want milk.',['It','They','She'],1],['My sister is tall. ___ plays basketball.',['He','She','It'],1],['The car is fast. ___ is blue.',['It','He','They'],0],['Grandma and I bake cakes. ___ love sweets.',['They','We','She'],1]],
+ compare:[['A horse is ___ than a dog.',['big','bigger','biggest'],1],['An elephant is the ___ animal here.',['big','bigger','biggest'],2],['A rabbit is ___ than a turtle.',['fast','faster','fastest'],1],['A cheetah is the ___ of all.',['fast','faster','fastest'],2],['good → better → ___',['goodest','best','bestest'],1],['tall → taller → ___',['tallest','talliest','more tall'],0],['My dad is ___ than me.',['tall','taller','tallest'],1],['This is the ___ cake in the world!',['better','best','good'],1],['A mouse is ___ than a cat.',['small','smaller','smallest'],1],['small → ___ → smallest',['smallier','smaller','more small'],1]],
+ longshort:[['A cat is ___ than a mouse.',['big','bigger','more big'],1],['tall → ___ → the tallest',['taller','more tall','tallest'],0],['nice → nicer → ___',['the nicest','the most nice','the nicer'],0],['hot → ___ → the hottest',['hoter','hotter','more hot'],1],['happy → happier → ___',['the happyest','the most happy','the happiest'],2],['A butterfly is ___ than a fly.',['beautifuler','more beautiful','most beautiful'],1],['A diamond is the ___ stone.',['expensivest','more expensive','most expensive'],2],['good → ___ → the best',['gooder','better','more good'],1],['bad → worse → ___',['the worst','the baddest','the most bad'],0],['This book is ___ than that one.',['interestinger','more interesting','the most interesting'],1]],
+ questions:[['___ is she? She is my mum.',['Who','What','Where'],0],['___ is it? It is a kite.',['Who','What','When'],1],['___ is the cat? Under the box.',['Where','Why','Who'],0],['___ is lunch? At one o’clock.',['What','When','Who'],1],['___ are you wet? Because it is raining.',['Why','Where','What'],0],['___ sweets do you have? Three!',['How many','Who','Where'],0],['___ do you live? In Cairo.',['Where','When','Who'],0],['___ is your teacher? Dr. Randa!',['What','Who','Why'],1],['___ is your favourite colour? Blue.',['Who','What','Where'],1],['___ is your birthday? In May.',['When','Where','Why'],0]],
+ ps:[['Lulu ___ a carrot every morning.',['eats','eating','is eat'],0],['Max and Lulu ___ to school together.',['walks','walk','walking'],1],['Lulu ___ up at seven o’clock.',['wake','wakes','waking'],1],['I ___ my teeth every day.',['brush','brushes','brushing'],0],['She ___ her teeth every day.',['brush','brushs','brushes'],2],['Max ___ very slowly.',['walk','walks','walkes'],1],['The sun ___ in the east.',['rise','rises','rising'],1],['We ___ English on Mondays.',['study','studies','studying'],0],['He ___ like milk.',['don’t','doesn’t','isn’t'],1],['___ Lulu like carrots? Yes, she does.',['Do','Does','Is'],1]],
+ pc:[['Look! Max ___ a red scarf.',['wears','is wearing','wearing'],1],['The ducks ___ on the ice now.',['are sliding','is sliding','slides'],0],['It ___ on Sunny Farm.',['is snowing','are snowing','snowing'],0],['Lulu ___ a snowman.',['is building','are building','build'],0],['I ___ a story right now.',['am reading','is reading','are reading'],0],['We ___ a song at the moment.',['is singing','are singing','am singing'],1],['Listen! The baby ___.',['cry','is crying','are crying'],1],['They are ___ football now.',['play','plays','playing'],2],['She ___ sleeping. She is awake.',['isn’t','aren’t','don’t'],0],['___ you listening? Yes, I am.',['Is','Are','Am'],1]],
+ pp:[['Lulu ___ her ball.',['has lost','have lost','lost has'],0],['Max ___ the ball!',['have found','has found','has find'],1],['She has ___ under her bed.',['look','looked','looking'],1],['___ you seen my ball?',['Has','Have','Did'],1],['I have just ___ my homework.',['finish','finished','finishing'],1],['We ___ never been to London.',['has','have','are'],1],['He has ___ his lunch already.',['eat','ate','eaten'],2],['Have you ever ___ a camel?',['ride','ridden','rode'],1],['They haven’t arrived ___.',['yet','already','just'],0],['My mum ___ made a cake.',['has','have','is'],0]],
+ ppc:[['Lulu ___ for an hour.',['has been waiting','have been waiting','is waited'],0],['Max has been ___ since breakfast.',['walk','walked','walking'],2],['“I ___ counting clouds,” says Lulu.',['have been','has been','am been'],0],['We have been playing ___ two hours.',['since','for','at'],1],['She has been reading ___ nine o’clock.',['for','since','ago'],1],['They ___ been swimming all day.',['has','have','are'],1],['How long ___ you been learning English?',['has','have','did'],1],['It has been ___ all morning.',['rain','rained','raining'],2],['Max ___ dreaming of a nap.',['has been','have been','been has'],0],['My feet hurt. I ___ all day!',['have been walking','has been walking','walked been'],0]],
+ pas:[['Yesterday they ___ to the beach.',['go','went','goed'],1],['Lulu ___ a pink shell.',['found','finded','finds'],0],['They ___ a big sandcastle.',['build','builded','built'],2],['Max ___ in the sea.',['swim','swam','swimmed'],1],['They ___ ice cream.',['eat','ate','eated'],1],['We ___ home happy.',['walk','walked','walks'],1],['I ___ my grandma last week.',['visit','visited','visits'],1],['She ___ a cake yesterday.',['make','made','maked'],1],['Did you ___ the film?',['see','saw','seen'],0],['He ___ go to school yesterday.',['didn’t','doesn’t','don’t'],0]],
+ pac:[['Lulu ___ when the doorbell rang.',['was sleeping','were sleeping','is sleeping'],0],['The owls ___ softly.',['was singing','were singing','sang were'],1],['The moon ___ brightly.',['was shining','were shining','is shine'],0],['Max ___ at the door.',['was standing','were standing','standing'],0],['I was ___ TV when you called.',['watch','watched','watching'],2],['We ___ playing when it started to rain.',['was','were','are'],1],['At 8 o’clock last night, she ___ her homework.',['was doing','were doing','did doing'],0],['They ___ sleeping. They were awake.',['wasn’t','weren’t','didn’t'],1],['While I was walking, I ___ a cat.',['saw','was see','seeing'],0],['___ you sleeping at ten o’clock?',['Was','Were','Did'],1]],
+ pap:[['The cake ___ when Lulu arrived.',['had gone','has gone','had go'],0],['Grandma Goat ___ a second cake.',['had baked','had bake','has baking'],0],['Max had ___ three pieces.',['eat','ate','eaten'],2],['The ducks ___ the rest.',['had eaten','have eaten','had ate'],0],['When we arrived, the film ___ started.',['had','has','have'],0],['She was sad because she had ___ her bag.',['lose','lost','losing'],1],['I ___ never seen snow before that day.',['had','have','has'],0],['By the time Dad came home, we ___ dinner.',['had finished','have finished','had finish'],0],['He had ___ the door before he left.',['lock','locked','locking'],1],['They ___ eaten when I called, so they were hungry.',['hadn’t','haven’t','didn’t'],0]],
+ papc:[['Max ___ the drum for weeks.',['had been practising','has practising','had practise'],0],['Lulu had been ___ all morning.',['dance','dancing','danced'],1],['The ducks had been ___ costumes.',['sew','sewed','sewing'],2],['She was tired because she ___ running.',['had been','has been','had'],0],['We had been waiting ___ an hour when the bus came.',['for','since','at'],0],['They ___ been playing since lunch.',['had','has','have'],0],['His eyes were red. He had been ___.',['cry','crying','cried'],1],['The ground was wet. It ___ raining.',['had been','has been','was been'],0],['I had been ___ English for a year before I visited London.',['learn','learning','learned'],1],['How long ___ you been waiting when the bus came?',['had','has','did'],0]],
+ fs:[['Max ___ a present tomorrow.',['will bring','will brings','brought'],0],['I think it ___ tomorrow.',['rains will','will rain','raining'],1],['“I ___ seven!” says Lulu.',['will be','will am','will is'],0],['Grandma Goat ___ a carrot cake.',['will make','will makes','will making'],0],['They ___ have fun.',['will','wills','are will'],0],['I will ___ you with your homework.',['help','helps','helping'],0],['She ___ come to the party. She is busy.',['won’t','willn’t','don’t'],0],['___ you come to my birthday party?',['Will','Do','Are'],0],['Next year, I ___ ten years old.',['am','will be','was'],1],['Don’t worry. I ___ tell anyone.',['won’t','will not to','not will'],0]],
+ fc:[['This time next week, they ___ to the moon.',['will fly be','will be flying','will flying'],1],['Lulu will be ___ to the stars.',['wave','waved','waving'],2],['Max ___ the map.',['will be holding','will holding','will be hold'],0],['At 8 o’clock tomorrow, I ___ breakfast.',['will be eating','will eating','will be eat'],0],['This time tomorrow, we will be ___ on the beach.',['sit','sitting','sat'],1],['Don’t call at 9. I ___ sleeping.',['will be','will','am will'],0],['What will you be ___ next week?',['do','doing','did'],1],['She ___ be working tomorrow. She is on holiday.',['won’t','will','isn’t'],0],['The Earth will be ___ smaller.',['get','getting','got'],1],['___ you be using the computer later?',['Will','Are','Do'],0]],
+ fp:[['By Friday, Max ___ his walk.',['will have finished','will finished','will have finish'],0],['By then, Lulu will have ___ a banner.',['paint','painted','painting'],1],['The ducks will have ___ up fifty balloons.',['blow','blew','blown'],2],['“You ___ walked ten kilometres!”',['will have','will has','will be'],0],['By 6 o’clock, I will have ___ my homework.',['do','did','done'],2],['By next year, she ___ learned to swim.',['will have','will has','have will'],0],['They will have ___ the house by Sunday.',['clean','cleaned','cleaning'],1],['By the time you arrive, we ___ eaten.',['will have','will had','have will'],0],['He won’t have ___ by 5 o’clock.',['finish','finished','finishing'],1],['___ you have finished by lunch?',['Will','Have','Do'],0]],
+ fpc:[['By December, Lulu ___ English for two years.',['will have been learning','will be learnt','will have learning'],0],['Max will have been ___ every week.',['read','reading','reads'],1],['The ducks will have been ___ every morning.',['sing','sang','singing'],2],['By 5 o’clock, I will have been ___ for three hours.',['study','studying','studied'],1],['By June, we will have ___ living here for a year.',['be','been','being'],1],['By tonight, she ___ have been working for ten hours.',['will','would','is'],0],['When Dad arrives, we will have been waiting ___ an hour.',['for','since','at'],0],['Next month, Dr. Randa will have been ___ for many years.',['teach','teaching','taught'],1],['How long ___ you have been learning English by next summer?',['will','do','are'],0],['By 10 o’clock, the baby will have been ___ for two hours.',['sleep','slept','sleeping'],2]]
+};
+
+/* ---------- Helpers ---------- */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const strip = s => s.replace(/<[^>]+>/g,'').replace(/\*\*/g,'');
+const BANDS = {all:null, little:[3,5], explore:[6,8], champ:[9,12]};
+let band = 'all';
+const fits = a => { const b = BANDS[band]; return !b || (a[0] <= b[1] && a[1] >= b[0]); };
+
+let earned = new Set();
+try { earned = new Set(JSON.parse(localStorage.getItem('fwr-stars') || '[]')); } catch(e) {}
+try { const b = localStorage.getItem('fwr-band'); if (b && b in BANDS) band = b; } catch(e) {}
+function award(id){
+  if (earned.has(id)) return false;
+  earned.add(id);
+  try { localStorage.setItem('fwr-stars', JSON.stringify([...earned])); } catch(e) {}
+  $('#starCount').textContent = earned.size;
+  toast('⭐ You won a star!');
+  return true;
+}
+$('#starCount').textContent = earned.size;
+let toastT;
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 1800); }
+
+/* ---------- Speech ---------- */
+const canSpeak = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+let soundOn = canSpeak;
+let voice = null;
+function pickVoice(){
+  if (!canSpeak) return;
+  const vs = speechSynthesis.getVoices();
+  voice = vs.find(v => /en-GB/i.test(v.lang) && /female|Libby|Sonia|Serena|Kate|Google UK English Female/i.test(v.name))
+       || vs.find(v => /en-GB/i.test(v.lang)) || vs.find(v => /^en/i.test(v.lang)) || null;
+}
+if (canSpeak) { pickVoice(); speechSynthesis.onvoiceschanged = pickVoice; }
+function speak(text, onEnd, opts = {}){
+  let done = false;
+  const finish = () => { if (done) return; done = true; opts.onStop && opts.onStop(); onEnd && onEnd(); };
+  opts.onStart && opts.onStart();
+  if (soundOn && canSpeak) {
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      if (voice) u.voice = voice;
+      u.lang = voice ? voice.lang : 'en-GB'; u.rate = .85; u.pitch = 1.15;
+      u.onend = finish; u.onerror = finish;
+      speechSynthesis.speak(u);
+      setTimeout(finish, 2500 + text.length * 110);
+    } catch(e) { setTimeout(finish, 1600 + text.length * 55); }
+  } else setTimeout(finish, 1600 + text.length * 55);
+  return () => { done = true; opts.onStop && opts.onStop(); };
+}
+function hush(){ if (canSpeak) try { speechSynthesis.cancel(); } catch(e) {} }
+
+/* ---------- Modals ---------- */
+const openStack = [];
+function openModal(id){
+  const m = document.getElementById(id);
+  openStack.push({id, back: document.activeElement});
+  m.hidden = false;
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => m.querySelector('.xbtn').focus(), 30);
+}
+function closeModal(id){
+  const m = document.getElementById(id);
+  if (m.hidden) return;
+  m.hidden = true;
+  if (id === 'playerModal') stopPlayer();
+  if (id === 'tenseModal') { stopReading(); hush(); Music.stop(); }
+  if (id === 'quizModal') hush();
+  const i = openStack.findIndex(o => o.id === id);
+  const entry = i > -1 ? openStack.splice(i,1)[0] : null;
+  if (!openStack.length) document.body.style.overflow = '';
+  if (entry && entry.back && entry.back.focus) entry.back.focus();
+}
+document.addEventListener('click', e => {
+  const c = e.target.closest('[data-close]'); if (c) closeModal(c.dataset.close);
+  if (e.target.classList.contains('modal')) closeModal(e.target.id);
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && openStack.length) closeModal(openStack[openStack.length-1].id);
+});
+
+/* ---------- Cartoon player ---------- */
+const P = {title:'', scenes:[], i:0, playing:false, timer:null, token:0, id:null, quiz:null};
+const stageOwl = $('#stageOwl');
+function renderArt(sc){
+  const art = $('#pArt');
+  art.className = 'art' + (sc.fx ? ' fx-' + sc.fx : '');
+  if (sc.prep) {
+    art.innerHTML = `<div class="prep ${sc.prep}"><span class="cat">🐱</span><span class="box">📦</span></div>`;
+    return;
+  }
+  const items = (sc.a || '').split(' ').filter(Boolean);
+  let html = items.map((it,k) => {
+    let style = `animation-delay:${k*.25}s`;
+    if (sc.sizes) style += `;font-size:calc(clamp(46px,10vw,104px) * ${sc.sizes[k] || 1})`;
+    const isFar = sc.far && it !== '👉';
+    return `<span class="it${isFar ? ' far' : ''}" style="${style}">${it}</span>`;
+  }).join('');
+  if (sc.label) html += `<div class="label">${esc(sc.label)}</div>`;
+  art.innerHTML = html;
+}
+function showScene(){
+  const sc = P.scenes[P.i];
+  renderArt(sc);
+  $('#pCap').innerHTML = '<span>' + sc.t.replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>') + '</span>';
+  $('#pBar').innerHTML = P.scenes.map((_,k) => `<i class="${k <= P.i ? 'on' : ''}"></i>`).join('');
+  $('#pFinale').hidden = true;
+}
+function setPlayBtn(){ const b = $('#pPlay'); b.textContent = P.playing ? '❚❚' : '▶'; b.setAttribute('aria-label', P.playing ? 'Pause' : 'Play'); }
+function step(){
+  const my = ++P.token;
+  clearTimeout(P.timer);
+  showScene();
+  speak(strip(P.scenes[P.i].t), () => {
+    if (my !== P.token || !P.playing) return;
+    P.timer = setTimeout(() => {
+      if (my !== P.token || !P.playing) return;
+      if (P.i < P.scenes.length - 1) { P.i++; step(); } else finishPlayer();
+    }, 800);
+  }, {onStart: () => stageOwl.classList.add('talking'), onStop: () => { if (my === P.token) stageOwl.classList.remove('talking'); }});
+}
+function play(){ if (!$('#pFinale').hidden) { P.i = 0; } P.playing = true; setPlayBtn(); step(); }
+function pause(){ P.playing = false; P.token++; clearTimeout(P.timer); hush(); stageOwl.classList.remove('talking'); setPlayBtn(); }
+function stopPlayer(){ pause(); }
+function finishPlayer(){
+  P.playing = false; setPlayBtn(); stageOwl.classList.remove('talking');
+  $('#pFinale').hidden = false;
+  if (P.id) award(P.id);
+  speak('Hooray! Well done!', null);
+}
+function openPlayer(title, scenes, id, quiz){
+  P.title = title; P.scenes = scenes; P.i = 0; P.id = id; P.quiz = quiz || null;
+  $('#pQuiz').hidden = !P.quiz;
+  $('#pTitle').textContent = title;
+  openModal('playerModal');
+  showScene();
+  play();
+}
+$('#pPlay').onclick = () => P.playing ? pause() : play();
+$('#pNext').onclick = () => { if (P.i < P.scenes.length - 1) { P.i++; P.playing ? step() : showScene(); } else { pause(); finishPlayer(); } };
+$('#pPrev').onclick = () => { if (P.i > 0) { P.i--; P.playing ? step() : showScene(); } };
+$('#pAgain').onclick = () => { P.i = 0; play(); };
+$('#pQuiz').onclick = () => { const q = P.quiz; closeModal('playerModal'); openQuiz(q.id, q.title); };
+$('#pSound').onclick = e => {
+  if (!canSpeak) return;
+  soundOn = !soundOn; if (!soundOn) hush();
+  e.currentTarget.setAttribute('aria-pressed', soundOn);
+  e.currentTarget.textContent = soundOn ? '🔊 Sound on' : '🔇 Sound off';
+};
+if (!canSpeak) { $('#noSound').hidden = false; $('#pSound').textContent = '🔇 No sound'; $('#pSound').disabled = true; }
+
+/* ---------- Render: videos ---------- */
+function renderVideos(){
+  const list = VIDEOS.filter(v => fits(v.ages));
+  $('#vgrid').innerHTML = list.length ? list.map(v => `
+    <button class="vcard" data-vid="${v.id}">
+      ${earned.has(v.id) ? '<span class="done-star">⭐ done</span>' : ''}
+      <div class="vthumb" style="background:${v.color}" aria-hidden="true">${v.icon}<span class="play"></span></div>
+      <div class="vbody"><h3>${esc(v.title)}</h3>
+        <div class="meta"><span class="pill">Ages ${v.ages[0]}–${v.ages[1]}</span><span class="pill">${v.scenes.length} scenes</span><span class="pill" style="background:var(--grape-soft)">${earned.has('quiz-'+v.id) ? '⭐ ' : ''}10-question quiz</span></div></div>
+    </button>`).join('') : '<div class="empty">No cartoons for this age yet.</div>';
+}
+$('#vgrid').addEventListener('click', e => {
+  const c = e.target.closest('[data-vid]'); if (!c) return;
+  const v = VIDEOS.find(x => x.id === c.dataset.vid);
+  openPlayer(v.title, v.scenes, v.id, {id:v.id, title:v.title});
+});
+
+/* ---------- Render: tense board ---------- */
+const GROUPS = [['present','Present'],['past','Past'],['future','Future']];
+const ASPECTS = ['Simple','Continuous','Perfect','Perfect Continuous'];
+function renderBoard(){
+  let h = '<div class="colhead"></div>' + ASPECTS.map(a => `<div class="colhead">${a}</div>`).join('');
+  GROUPS.forEach(([g,label]) => {
+    h += `<div class="rowhead g-${g}">${label}</div>`;
+    TENSES.filter(t => t.group === g).forEach(t => {
+      h += `<button class="tcard${fits(t.ages) ? '' : ' dim'}" data-tid="${t.id}">
+        ${earned.has('quiz-'+t.id) ? '<span class="done-star" style="left:auto;right:8px;top:8px">⭐</span>' : ''}
+        <span class="tem" aria-hidden="true">${t.em}</span><b>${t.name}</b>
+        <span class="ex">${t.ex}</span><span class="agepill">Ages ${t.ages[0]}+</span></button>`;
+    });
+  });
+  $('#board').innerHTML = h;
+}
+$('#board').addEventListener('click', e => { const c = e.target.closest('[data-tid]'); if (c) openTense(c.dataset.tid); });
+
+function timeline(tl){
+  let h = '<div class="tl" aria-hidden="true"><div class="line"></div><div class="now"></div>';
+  h += '<span class="lab" style="left:12%">Past</span><span class="lab n" style="left:50%">Now</span><span class="lab" style="left:86%">Future</span>';
+  (tl.bands||[]).forEach(([a,b]) => h += `<div class="band" style="left:${a}%;width:${b-a}%"></div>`);
+  if (tl.arrow) h += `<div class="arrow" style="left:${tl.arrow[0]}%;width:${tl.arrow[1]-tl.arrow[0]}%"></div>`;
+  (tl.ghost||[]).forEach(x => h += `<div class="dot ghost" style="left:${x}%"></div>`);
+  (tl.dots||[]).forEach(x => h += `<div class="dot" style="left:${x}%"></div>`);
+  return h + '</div>';
+}
+function splitEmoji(s){
+  try { if (Intl.Segmenter) return [...new Intl.Segmenter('en',{granularity:'grapheme'}).segment(s)].map(x => x.segment).join(' '); } catch(e) {}
+  return s;
+}
+const GCOL = {present:'var(--grass)', past:'var(--coral)', future:'var(--grape)'};
+let curTense = null, readToken = 0;
+function openTense(id){
+  const t = TENSES.find(x => x.id === id); curTense = t;
+  $('#tHead').style.background = GCOL[t.group];
+  $('#tKick').textContent = `${t.group} tense · ages ${t.ages[0]}+`;
+  $('#tTitle').textContent = t.name;
+  $('#tBody').innerHTML = `
+    <div class="formula"><small>How to make it</small>${t.formula}</div>
+    <div class="twocol">
+      <div><p class="h4">When do we use it?</p><p style="margin:.3em 0 0;font-weight:700">${t.use}</p></div>
+      <div><p class="h4">Clue words</p><div class="signals" style="margin-top:6px">${t.signals.map(s => `<span>${esc(s)}</span>`).join('')}</div></div>
+    </div>
+    <div><p class="h4">Timeline</p>${timeline(t.tl)}</div>
+    <div class="story"><p class="story-title">📖 ${esc(t.story)}</p>
+      ${t.s.map((s,k) => `<span class="s" data-k="${k}">${s[1].replace(/\*\*(.+?)\*\*/g,'<mark>$1</mark>')}</span>`).join(' ')}</div>
+    <div class="actions">
+      <button class="rbtn solid" id="tWatch" style="background:var(--coral)">▶ Watch the cartoon</button>
+      <button class="rbtn" id="tRead">🔊 Read to me</button>
+    </div>
+    <div class="q" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between">
+      <div><p class="h4">Quiz time!</p><p style="margin:0;font-weight:700">10 questions about the ${esc(t.name)}. Get 7 or more to win a star.</p></div>
+      <button class="rbtn solid" id="tQuiz" style="background:var(--grape)">📝 Start the quiz</button>
+    </div>`;
+  $('#tQuiz').onclick = () => { stopReading(); openQuiz(t.id, t.name); };
+  $('#tWatch').onclick = () => {
+    stopReading();
+    const scenes = [{a:t.em,label:t.name,t:`${t.name}. A story called ${t.story}.`,fx:'bounce'}]
+      .concat(t.s.map(([a,txt]) => ({a: splitEmoji(a), t: txt})));
+    openPlayer(t.story, scenes, 'cartoon-' + t.id, {id:t.id, title:t.name});
+  };
+  $('#tRead').onclick = readStory;
+  openModal('tenseModal');
+  Music.start();
+}
+function stopReading(){ readToken++; document.querySelectorAll('.story .s.reading').forEach(s => s.classList.remove('reading')); const b = $('#tRead'); if (b) b.textContent = '🔊 Read to me'; }
+function readStory(){
+  const b = $('#tRead');
+  if (b.textContent.includes('Stop')) { stopReading(); hush(); return; }
+  const my = ++readToken; b.textContent = '■ Stop reading';
+  const spans = [...document.querySelectorAll('.story .s')];
+  const next = k => {
+    if (my !== readToken) return;
+    spans.forEach(s => s.classList.remove('reading'));
+    if (k >= spans.length) { stopReading(); return; }
+    spans[k].classList.add('reading');
+    speak(strip(curTense.s[k][1]), () => setTimeout(() => next(k+1), 300));
+  };
+  next(0);
+}
+
+/* ---------- Soft story music (music box, made in the browser) ---------- */
+const Music = {
+  ctx:null, out:null, on:true, playing:false, timer:null, next:0, step:0,
+  chords:[[60,64,67],[57,60,64],[53,57,60],[55,59,62]],
+  note(midi, t, len, vol, type){
+    const c = this.ctx, o = c.createOscillator(), g = c.createGain();
+    o.type = type || 'sine'; o.frequency.value = 440 * Math.pow(2, (midi - 69) / 12);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .02); g.gain.exponentialRampToValueAtTime(.0001, t + len);
+    o.connect(g); g.connect(this.out); o.start(t); o.stop(t + len + .05);
+  },
+  tick(){
+    if (!this.playing) return;
+    const c = this.ctx, beat = .42;
+    while (this.next < c.currentTime + .6) {
+      const bar = Math.floor(this.step / 8) % 4, pos = this.step % 8, ch = this.chords[bar];
+      const tones = [ch[0]+12, ch[1]+12, ch[2]+12, ch[1]+12, ch[0]+24, ch[2]+12, ch[1]+12, ch[2]+12];
+      this.note(tones[pos], this.next, 1.6, .5);
+      this.note(tones[pos] + 12, this.next, .7, .08);
+      if (pos === 0) this.note(ch[0] - 12, this.next, beat * 8, .35, 'triangle');
+      this.next += beat; this.step++;
+    }
+    this.timer = setTimeout(() => this.tick(), 150);
+  },
+  start(){
+    if (!this.on || this.playing) return;
+    try {
+      this.ctx = this.ctx || new (window.AudioContext || window.webkitAudioContext)();
+      this.ctx.resume && this.ctx.resume();
+      this.out = this.ctx.createGain();
+      this.out.gain.setValueAtTime(0, this.ctx.currentTime);
+      this.out.gain.linearRampToValueAtTime(.07, this.ctx.currentTime + 2);
+      this.out.connect(this.ctx.destination);
+    } catch(e) { return; }
+    this.playing = true; this.step = 0; this.next = this.ctx.currentTime + .1; this.tick();
+  },
+  stop(){
+    if (!this.playing) return;
+    this.playing = false; clearTimeout(this.timer);
+    const out = this.out, c = this.ctx;
+    try { out.gain.cancelScheduledValues(c.currentTime); out.gain.setValueAtTime(out.gain.value, c.currentTime); out.gain.linearRampToValueAtTime(0, c.currentTime + .8); setTimeout(() => out.disconnect(), 1000); } catch(e) {}
+  }
+};
+try { if (localStorage.getItem('fwr-music') === 'off') Music.on = false; } catch(e) {}
+function syncMusicBtn(){ const b = $('#tMusic'); b.setAttribute('aria-pressed', Music.on); b.textContent = Music.on ? '🎵 Music on' : '🎵 Music off'; }
+syncMusicBtn();
+$('#tMusic').onclick = () => {
+  Music.on = !Music.on; syncMusicBtn();
+  try { localStorage.setItem('fwr-music', Music.on ? 'on' : 'off'); } catch(e) {}
+  Music.on ? Music.start() : Music.stop();
+};
+
+/* ---------- Quiz engine ---------- */
+const Q = {id:null, title:'', items:[], i:0, score:0, results:[]};
+function shuffle(a){ a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [a[k], a[j]] = [a[j], a[k]]; } return a; }
+function openQuiz(id, title){
+  Q.id = id; Q.title = title; Q.i = 0; Q.score = 0; Q.results = [];
+  Q.items = QUIZ[id].map(([q, opts, ans]) => ({q, ans: opts[ans], opts: shuffle(opts)}));
+  $('#qTitle').textContent = 'Quiz: ' + title;
+  openModal('quizModal');
+  renderQ();
+}
+const sayQ = q => q.replace(/_{3}/g, 'blank').replace(/[\u{1F300}-\u{1FAFF}\u2600-\u27BF\uFE0F\u200D]/gu, '');
+function renderQ(){
+  const it = Q.items[Q.i];
+  const prog = Q.items.map((_, k) => `<i class="${k < Q.i ? (Q.results[k] ? 'ok' : 'no') : k === Q.i ? 'cur' : ''}"></i>`).join('');
+  $('#qz').innerHTML = `
+    <div class="qprog" aria-hidden="true">${prog}</div>
+    <div class="qnum"><span>Question ${Q.i + 1} of ${Q.items.length}</span><span>⭐ ${Q.score} right</span></div>
+    <p class="qtext">${esc(it.q).replace(/_{3}/g, '<span class="blank"></span>')}</p>
+    <div class="qopts">${it.opts.map(o => `<button data-o="${esc(o)}">${esc(o)}</button>`).join('')}</div>
+    <div class="qfeed" id="qFeed" aria-live="polite"></div>
+    <div class="actions" style="justify-content:space-between">
+      <button class="rbtn" id="qHear">🔊 Hear it</button>
+      <button class="rbtn solid" id="qNext" hidden>${Q.i === Q.items.length - 1 ? 'See my score' : 'Next question'} ▶</button>
+    </div>`;
+  $('#qHear').onclick = () => speak(sayQ(it.q), null);
+  $('#qNext').onclick = () => { Q.i++; Q.i < Q.items.length ? renderQ() : endQ(); };
+  speak(sayQ(it.q), null);
+}
+$('#qz').addEventListener('click', e => {
+  const b = e.target.closest('.qopts button'); if (!b) return;
+  const it = Q.items[Q.i], ok = b.dataset.o === it.ans, fb = $('#qFeed');
+  document.querySelectorAll('.qopts button').forEach(x => { x.disabled = true; if (x.dataset.o === it.ans) x.classList.add('right'); });
+  Q.results[Q.i] = ok;
+  if (ok) { Q.score++; fb.className = 'qfeed ok'; fb.textContent = ['Correct! 🎉','Well done! 👏','Super! 🌟','Yes! Great job! 💪'][Q.i % 4]; speak('Correct! ' + sayQ(it.q.replace(/_{3}/, it.ans)), null); }
+  else { b.classList.add('wrong'); fb.className = 'qfeed no'; fb.textContent = `Oops! The answer is “${it.ans}”.`; speak('Oops! The answer is ' + sayQ(it.ans), null); }
+  const n = $('#qNext'); n.hidden = false; n.focus();
+});
+function endQ(){
+  const s = Q.score, n = Q.items.length, rate = s >= 10 ? 3 : s >= 7 ? 2 : s >= 4 ? 1 : 0;
+  const msg = s === n ? 'Perfect score! You are a superstar!' : s >= 7 ? 'Brilliant work!' : s >= 4 ? 'Good try! Practise a little more.' : 'Keep going! Watch the lesson again and try once more.';
+  $('#qz').innerHTML = `<div class="qend">
+    <div class="rate" aria-label="${rate} of 3 stars">${[0,1,2].map(k => `<span class="${k < rate ? '' : 'off'}">⭐</span>`).join('')}</div>
+    <div class="score">${s} / ${n}</div>
+    <p class="qtext" style="font-size:1.5rem">${msg}</p>
+    ${s >= 7 ? '' : '<p style="margin:0;font-weight:700;color:var(--ink-2)">Get 7 or more right to win a star.</p>'}
+    <div class="actions" style="justify-content:center"><button class="rbtn" id="qAgain">↺ Try again</button><button class="rbtn solid" data-close="quizModal">Done</button></div>
+  </div>`;
+  $('#qAgain').onclick = () => { closeModal('quizModal'); openQuiz(Q.id, Q.title); };
+  speak(`You got ${s} out of ${n}. ${msg}`, null);
+  if (s >= 7 && award('quiz-' + Q.id)) renderBoard();
+}
+
+/* ---------- Flashcards ---------- */
+let deck = DECKS[0], order = [], fi = 0, flipped = false;
+function knownKey(c){ return 'fc-' + deck.id + '-' + c.w; }
+function renderDecks(){
+  const list = DECKS.filter(d => fits(d.ages));
+  if (!list.includes(deck)) { deck = list[0] || DECKS[0]; resetDeck(); }
+  $('#decks').innerHTML = list.map(d => `<button class="deck" data-did="${d.id}" aria-pressed="${d === deck}">
+    <span class="dic" style="background:${d.color}" aria-hidden="true">${d.icon}</span><span>${d.name}<small>Ages ${d.ages[0]}–${d.ages[1]} · ${d.cards.length} cards</small></span></button>`).join('');
+}
+function resetDeck(){ order = deck.cards.map((_,k) => k); fi = 0; flipped = false; renderCard(); }
+function front(c){
+  if (c.sw) return `<div class="swatch" style="background:${c.sw}"></div><div class="word">${esc(c.w)}</div>`;
+  if (c.n) return `<div class="num">${c.n}</div><div class="dots" aria-hidden="true">${'⭐'.repeat(c.n)}</div>`;
+  return `<div class="pic" aria-hidden="true">${c.f}</div><div class="word">${esc(c.w)}</div>`;
+}
+function renderCard(){
+  const c = deck.cards[order[fi]];
+  $('#fcTitle').textContent = deck.name;
+  const fr = $('#fcFront'); fr.style.background = deck.color;
+  fr.innerHTML = front(c) + '<span class="hint">Tap to flip</span>';
+  $('#fcBack').innerHTML = `${c.f ? `<div class="pic" style="font-size:64px" aria-hidden="true">${c.f}</div>` : c.sw ? `<div class="swatch" style="background:${c.sw};width:30%"></div>` : ''}
+    <div class="word">${esc(c.w)}</div><div class="arabic" lang="ar">${c.ar}</div>${c.x ? `<div class="extra">${esc(c.x)}</div>` : ''}<span class="hint">Tap to flip back</span>`;
+  $('#card').classList.toggle('flipped', flipped);
+  $('#card').setAttribute('aria-label', `${c.w}. ${flipped ? 'Showing back' : 'Tap to flip'}`);
+  $('#fcCount').textContent = `${fi+1} / ${order.length}`;
+  $('#known').innerHTML = order.map((k,j) => `<i class="${earned.has('fc-'+deck.id+'-'+deck.cards[k].w) ? 'on' : ''}${j === fi ? ' cur' : ''}"></i>`).join('');
+  $('#fcKnow').textContent = earned.has(knownKey(c)) ? '⭐ Known!' : '⭐ I know it!';
+}
+$('#decks').addEventListener('click', e => {
+  const b = e.target.closest('[data-did]'); if (!b) return;
+  deck = DECKS.find(d => d.id === b.dataset.did); resetDeck(); renderDecks();
+});
+$('#card').onclick = () => { flipped = !flipped; renderCard(); if (flipped) sayCard(); };
+const go = d => { fi = (fi + d + order.length) % order.length; flipped = false; renderCard(); };
+$('#fcNext').onclick = () => go(1);
+$('#fcPrev').onclick = () => go(-1);
+function sayCard(){ const c = deck.cards[order[fi]]; speak(flipped ? (c.say || (c.x ? c.w + '. ' + c.x : c.w)) : c.w, null); }
+$('#fcSay').onclick = sayCard;
+$('#fcShuffle').onclick = () => { for (let k = order.length - 1; k > 0; k--) { const j = Math.floor(Math.random() * (k + 1)); [order[k], order[j]] = [order[j], order[k]]; } fi = 0; flipped = false; renderCard(); toast('🔀 Shuffled!'); };
+$('#fcKnow').onclick = () => {
+  const c = deck.cards[order[fi]];
+  award(knownKey(c));
+  const allKnown = deck.cards.every(x => earned.has('fc-' + deck.id + '-' + x.w));
+  if (allKnown && award('deck-' + deck.id)) setTimeout(() => toast('🏆 You know the whole deck!'), 1900);
+  renderCard();
+  setTimeout(() => go(1), 450);
+};
+document.addEventListener('keydown', e => {
+  if (openStack.length) return;
+  const r = $('#flashcards').getBoundingClientRect();
+  if (r.top > innerHeight || r.bottom < 0) return;
+  if (e.key === 'ArrowRight') go(1);
+  if (e.key === 'ArrowLeft') go(-1);
+});
+
+/* ---------- Age chooser ---------- */
+function applyBand(){
+  document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', c.dataset.band === band));
+  renderVideos(); renderBoard(); renderDecks();
+}
+document.querySelector('.ages-box').addEventListener('click', e => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  band = c.dataset.band;
+  try { localStorage.setItem('fwr-band', band); } catch(err) {}
+  applyBand();
+});
+
+/* ---------- Copy buttons ---------- */
+document.querySelectorAll('[data-copy]').forEach(b => b.addEventListener('click', () => {
+  const el = document.getElementById(b.dataset.copy), txt = el.textContent.trim();
+  const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+  try {
+    navigator.clipboard.writeText(txt).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); }, () => { sel(); b.textContent = 'Selected'; });
+  } catch(e) { sel(); b.textContent = 'Selected'; }
+}));
+
+// re-render videos when stars change so "done" badges appear
+const _award = award;
+award = function(id){ const r = _award(id); if (r) { renderVideos(); } return r; };
+
+applyBand();
+resetDeck();
+renderDecks();
+</script>
+
+</body></html>
